@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&amp;family=Tajawal:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-dim": "#131313",
+                "on-secondary-fixed": "#1a1c1c",
+                "surface-bright": "#393939",
+                "on-primary": "#283500",
+                "outline-variant": "#444936",
+                "on-background": "#e2e2e2",
+                "primary-fixed-dim": "#aed53c",
+                "surface": "#131313",
+                "inverse-on-surface": "#303030",
+                "on-secondary-container": "#b4b5b5",
+                "surface-tint": "#aed53c",
+                "on-error": "#690005",
+                "on-tertiary-container": "#656464",
+                "surface-container": "#1f1f1f",
+                "error": "#ffb4ab",
+                "on-error-container": "#ffdad6",
+                "error-container": "#93000a",
+                "error-red": "#FF3B30",
+                "secondary-fixed-dim": "#c6c6c7",
+                "on-tertiary-fixed-variant": "#474746",
+                "secondary": "#c6c6c7",
+                "on-secondary-fixed-variant": "#454747",
+                "primary-container": "#c9f156",
+                "surface-container-highest": "#353535",
+                "outline": "#8f937d",
+                "tertiary-fixed": "#e5e2e1",
+                "background": "#131313",
+                "on-surface-variant": "#c5c9b1",
+                "success-green": "#2ECC71",
+                "absolute-black": "#000000",
+                "secondary-container": "#454747",
+                "inverse-surface": "#e2e2e2",
+                "on-primary-container": "#556d00",
+                "primary": "#ffffff",
+                "tertiary": "#ffffff",
+                "pure-white": "#FFFFFF",
+                "tertiary-fixed-dim": "#c8c6c5",
+                "surface-variant": "#353535",
+                "on-tertiary": "#313030",
+                "dark-grey": "#1A1A1A",
+                "tertiary-container": "#e5e2e1",
+                "on-primary-fixed": "#161f00",
+                "inverse-primary": "#4f6600",
+                "surface-container-high": "#2a2a2a",
+                "secondary-fixed": "#e2e2e2",
+                "on-primary-fixed-variant": "#3b4d00",
+                "on-surface": "#e2e2e2",
+                "on-secondary": "#2f3131",
+                "primary-fixed": "#c9f156",
+                "surface-container-lowest": "#0e0e0e",
+                "on-tertiary-fixed": "#1c1b1b",
+                "electric-lime": "#D6FF62",
+                "surface-container-low": "#1b1b1b"
+            },
+            "borderRadius": {
+                "DEFAULT": "0px",
+                "lg": "0px",
+                "xl": "0px",
+                "full": "9999px"
+            },
+            "spacing": {
+                "base": "4px",
+                "section-gap": "48px",
+                "margin-desktop": "64px",
+                "gutter": "24px",
+                "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                "display-xl-mobile": ["Cairo"],
+                "display-xl": ["Cairo"],
+                "headline-md": ["Cairo"],
+                "body-lg": ["Tajawal"],
+                "body-md": ["Tajawal"],
+                "data-mono": ["JetBrains Mono"],
+                "headline-lg-mobile": ["Cairo"],
+                "headline-lg": ["Cairo"],
+                "label-caps": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                "display-xl-mobile": ["48px", {"lineHeight": "52px", "fontWeight": "900"}],
+                "display-xl": ["96px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+                "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "800"}],
+                "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #000000; color: #e2e2e2; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .chart-grid {
+            background-image: linear-gradient(to right, #1A1A1A 1px, transparent 1px),
+                              linear-gradient(to bottom, #1A1A1A 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
+</head>
+<body class="font-body-md overflow-x-hidden flex flex-row">
+<!-- Side Navigation (Desktop) -->
+<aside class="hidden lg:flex flex-col w-64 h-screen sticky top-0 bg-absolute-black border-l border-surface-variant z-50">
+<div class="p-8 border-b border-surface-variant mb-4">
+<h1 class="text-headline-md font-headline-md font-black text-electric-lime">Stocker</h1>
+</div>
+<nav class="flex-1 px-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low hover:text-electric-lime transition-all group" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-body-lg">الرئيسية</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-surface-container-low text-electric-lime border-r-4 border-electric-lime transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-lg">بيانات الصناديق</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low hover:text-electric-lime transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+<span class="font-body-lg">المحافظ العامة</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low hover:text-electric-lime transition-all" href="#">
+<span class="material-symbols-outlined">lock_open</span>
+<span class="font-body-lg">المحافظ الخاصة</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low hover:text-electric-lime transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-body-lg">مجتمع المستثمرين</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-low hover:text-electric-lime transition-all" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-body-lg">محفظتي</span>
+</a>
+</nav>
+<div class="p-6 border-t border-surface-variant">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-electric-lime transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-body-lg">الملف الشخصي</span>
+</a>
+</div>
+</aside>
+<div class="flex-1">
+<!-- Top AppBar -->
+<header class="bg-absolute-black border-b border-surface-variant flex flex-row-reverse justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 sticky top-0 z-40">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-electric-lime cursor-pointer hover:opacity-80">notifications</span>
+<span class="material-symbols-outlined text-electric-lime cursor-pointer hover:opacity-80">flag</span>
+</div>
+<div class="flex items-center gap-6 lg:hidden">
+<h1 class="text-headline-md font-headline-md font-black text-electric-lime">Stocker</h1>
+</div>
+<div class="flex items-center">
+<button class="text-on-surface-variant hover:text-electric-lime transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main class="max-w-screen-xl mx-auto px-margin-mobile md:px-margin-desktop py-8 pb-32">
+<!-- Fund Header -->
+<section class="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-10">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<div class="w-12 h-12 bg-dark-grey border border-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-electric-lime" style="font-variation-settings: 'FILL' 1;">account_balance</span>
+</div>
+<span class="bg-dark-grey text-electric-lime text-label-caps font-label-caps px-2 py-1 flex items-center gap-1">
+<span class="w-2 h-2 bg-electric-lime"></span> مباشر
+                    </span>
+</div>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg mb-1">صندوق الاستثمار المتوازن</h2>
+<p class="text-on-surface-variant font-body-lg">إدارة: هيرميس للاستثمار - المجموعة المالية</p>
+</div>
+<div class="text-left md:text-right">
+<div class="text-label-caps font-label-caps text-on-surface-variant mb-1">سعر الوثيقة الحالي</div>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-pure-white">١٤٢.٦٥</span>
+<span class="text-headline-md font-headline-md text-pure-white">ج.م</span>
+</div>
+<div class="flex items-center gap-1 text-success-green font-data-mono">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+٤.٢٪ (الشهر الماضي)</span>
+</div>
+</div>
+</section>
+<!-- Chart Section -->
+<section class="bg-dark-grey border border-surface-variant p-1 relative overflow-hidden mb-10">
+<div class="chart-grid h-[300px] md:h-[450px] w-full relative flex items-end">
+<!-- Simple SVG Line Chart (Representative) -->
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 1000 400">
+<path d="M0,350 L100,320 L200,340 L300,280 L400,300 L500,220 L600,250 L700,180 L800,150 L900,120 L1000,80" fill="none" stroke="#D6FF62" stroke-width="4"></path>
+<defs>
+<lineargradient id="chartGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#D6FF62" stop-opacity="0.3"></stop>
+<stop offset="100%" stop-color="#D6FF62" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+<path d="M0,350 L100,320 L200,340 L300,280 L400,300 L500,220 L600,250 L700,180 L800,150 L900,120 L1000,80 L1000,400 L0,400 Z" fill="url(#chartGradient)"></path>
+</svg>
+<!-- Tooltip Overlay Placeholder -->
+<div class="absolute left-1/4 top-1/2 border-r border-dashed border-pure-white h-full pointer-events-none"></div>
+<div class="absolute left-1/4 top-1/4 -translate-x-1/2 bg-electric-lime text-absolute-black px-3 py-1 font-data-mono text-xs">
+                    ١٣٨.٥٠ ج.م
+                </div>
+</div>
+<!-- Timeframe Selector -->
+<div class="flex border-t border-surface-variant">
+<button class="flex-1 py-4 text-label-caps font-label-caps text-on-surface-variant hover:bg-surface-variant transition-colors">يوم</button>
+<button class="flex-1 py-4 text-label-caps font-label-caps text-on-surface-variant hover:bg-surface-variant transition-colors">اسبوع</button>
+<button class="flex-1 py-4 text-label-caps font-label-caps bg-surface-container-low text-electric-lime border-b-2 border-electric-lime">شهر</button>
+<button class="flex-1 py-4 text-label-caps font-label-caps text-on-surface-variant hover:bg-surface-variant transition-colors">٦ أشهر</button>
+<button class="flex-1 py-4 text-label-caps font-label-caps text-on-surface-variant hover:bg-surface-variant transition-colors">سنة</button>
+</div>
+</section>
+<!-- Info Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Sharia Card -->
+<div class="bg-dark-grey p-6 flex flex-col justify-between border-r-4 border-electric-lime">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-electric-lime text-4xl">verified_user</span>
+<span class="text-label-caps font-label-caps text-on-surface-variant">التوافق</span>
+</div>
+<div>
+<h3 class="text-headline-md font-headline-md text-pure-white mb-2">متوافق مع الشريعة</h3>
+<p class="text-body-md text-on-surface-variant">يتم مراجعة كافة الاستثمارات من قبل هيئة رقابة شرعية متخصصة لضمان الالتزام.</p>
+</div>
+</div>
+<!-- Liquidity Card -->
+<div class="bg-dark-grey p-6 flex flex-col justify-between border-r-4 border-on-surface-variant">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-on-surface-variant text-4xl">payments</span>
+<span class="text-label-caps font-label-caps text-on-surface-variant">السيولة</span>
+</div>
+<div>
+<h3 class="text-headline-md font-headline-md text-pure-white mb-2">سيولة يومية</h3>
+<p class="text-body-md text-on-surface-variant">إمكانية استرداد قيمة الوثائق في أي يوم عمل قبل الساعة ١٢ ظهراً.</p>
+</div>
+</div>
+<!-- Fees Card -->
+<div class="bg-dark-grey p-6 flex flex-col justify-between border-r-4 border-on-surface-variant">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-on-surface-variant text-4xl">receipt_long</span>
+<span class="text-label-caps font-label-caps text-on-surface-variant">المصاريف</span>
+</div>
+<div>
+<h3 class="text-headline-md font-headline-md text-pure-white mb-2">٠.٥٪ سنويًا</h3>
+<p class="text-body-md text-on-surface-variant">رسوم إدارية منخفضة لتعظيم أرباح المستثمر على المدى الطويل.</p>
+</div>
+</div>
+</div>
+<!-- Rules Section -->
+<section class="mb-12">
+<h3 class="text-headline-md font-headline-md mb-6 border-r-4 border-electric-lime pr-4">شروط وقواعد الصندوق</h3>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 border border-surface-variant hover:border-electric-lime transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-electric-lime">description</span>
+<span class="font-body-lg">نشرة الاكتتاب الكاملة</span>
+</div>
+<span class="material-symbols-outlined">chevron_left</span>
+</div>
+<div class="flex items-center justify-between p-4 border border-surface-variant hover:border-electric-lime transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-electric-lime">history_edu</span>
+<span class="font-body-lg">سجل الأداء التاريخي (٥ سنوات)</span>
+</div>
+<span class="material-symbols-outlined">chevron_left</span>
+</div>
+<div class="flex items-center justify-between p-4 border border-surface-variant hover:border-electric-lime transition-colors cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-electric-lime">policy</span>
+<span class="font-body-lg">سياسة الاستثمار وتوزيع الأصول</span>
+</div>
+<span class="material-symbols-outlined">chevron_left</span>
+</div>
+</div>
+</section>
+<!-- Manager Image Highlight -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-0 mb-12 bg-dark-grey">
+<div class="p-8 flex flex-col justify-center">
+<span class="text-label-caps font-label-caps text-electric-lime mb-4">فريق الإدارة</span>
+<h4 class="text-headline-md font-headline-md mb-4">خبرة تتجاوز العشرين عامًا في السوق المصري</h4>
+<p class="text-on-surface-variant font-body-md mb-6 leading-relaxed">تتم إدارة الصندوق بواسطة فريق من المحللين الماليين المعتمدين دولياً، مع التركيز على اقتناص الفرص في البورصة المصرية وأدوات الدخل الثابت لضمان توازن حقيقي بين المخاطر والعوائد.</p>
+<div class="flex items-center gap-2">
+<div class="w-12 h-[2px] bg-electric-lime"></div>
+<span class="text-label-caps font-label-caps">إدارة احترافية</span>
+</div>
+</div>
+<div class="h-64 md:h-auto min-h-[300px]">
+<img alt="Financial Management Hub" class="w-full h-full object-cover" data-alt="A high-angle architectural shot of a sleek, black glass financial skyscraper in Cairo at dusk. The building's sharp, brutalist edges are highlighted by vibrant electric lime neon light strips running vertically. The atmosphere is professional, cinematic, and modern, reflecting a high-octane Egyptian fintech environment. Soft ambient lighting glows from the interior windows, creating a powerful techno-organic aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKbMRthldiCzv_7Gq9L9rn0qQ1E7t18k2GEtPeeFT5bPg5YXwNegiZ7SGtnrwzu7SHmaTcptYNV4GjmDycYkcyC4u2u4CdQvEKo7LPiEO6zPHsFnVN4NrVwQ4_IjQH5g2qgoIdTjr-P3QMGvDDRhz5sBwXJJ9Ge3rr04Re5scmy_bniXj1uI0RcuFt_RvlLvAG_RYRfpnQBDHILQMq6rpe5AW2Jj8I1M19onfwh6nFlwx2X5zLcB0j30olXuBPikbkABDE-dJurDQ"/>
+</div>
+</section>
+</main>
+<!-- Fixed Bottom CTA (Desktop relative to main content) -->
+<div class="fixed bottom-0 left-0 lg:left-0 lg:right-64 w-full lg:w-auto bg-absolute-black p-4 md:p-6 border-t border-surface-variant flex flex-col md:flex-row items-center justify-between gap-4 z-50">
+<div class="hidden md:block">
+<p class="text-label-caps font-label-caps text-on-surface-variant">الحد الأدنى للاستثمار</p>
+<p class="text-headline-md font-headline-md text-pure-white">٥٠٠.٠٠ ج.م</p>
+</div>
+<button class="w-full md:w-auto bg-electric-lime text-absolute-black font-headline-md text-lg px-12 py-5 hover:opacity-90 active:scale-95 transition-all flex items-center justify-center gap-3">
+<span>استثمار في هذا الصندوق</span>
+<span class="material-symbols-outlined">trending_up</span>
+</button>
+</div>
+<!-- Mobile Navigation -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex flex-row-reverse justify-around items-center py-2 bg-absolute-black border-t border-surface-variant lg:hidden">
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-caps font-label-caps">الرئيسية</span>
+</div>
+<div class="flex flex-col items-center justify-center text-electric-lime font-bold">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-label-caps font-label-caps">بيانات</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">public</span>
+<span class="text-label-caps font-label-caps">عامة</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">lock_open</span>
+<span class="text-label-caps font-label-caps">خاصة</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-label-caps font-label-caps">محفظتي</span>
+</div>
+</nav>
+</div>
+</body></html>

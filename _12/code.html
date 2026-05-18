@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&amp;family=Tajawal:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-primary": "#4f6600",
+                    "surface-container-high": "#2a2a2a",
+                    "on-primary": "#283500",
+                    "secondary": "#c6c6c7",
+                    "inverse-on-surface": "#303030",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "error": "#ffb4ab",
+                    "outline-variant": "#444936",
+                    "on-secondary": "#2f3131",
+                    "absolute-black": "#000000",
+                    "tertiary-container": "#e5e2e1",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "success-green": "#2ECC71",
+                    "surface-variant": "#353535",
+                    "outline": "#8f937d",
+                    "primary-fixed": "#c9f156",
+                    "on-tertiary-container": "#656464",
+                    "on-surface-variant": "#c5c9b1",
+                    "on-error-container": "#ffdad6",
+                    "inverse-surface": "#e2e2e2",
+                    "on-tertiary": "#313030",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "primary-fixed-dim": "#aed53c",
+                    "on-secondary-container": "#b4b5b5",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary-container": "#556d00",
+                    "tertiary": "#ffffff",
+                    "electric-lime": "#D6FF62",
+                    "surface-bright": "#393939",
+                    "primary": "#ffffff",
+                    "tertiary-fixed": "#e5e2e1",
+                    "background": "#131313",
+                    "surface-container-highest": "#353535",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-surface": "#e2e2e2",
+                    "dark-grey": "#1A1A1A",
+                    "on-primary-fixed-variant": "#3b4d00",
+                    "pure-white": "#FFFFFF",
+                    "on-background": "#e2e2e2",
+                    "error-container": "#93000a",
+                    "surface-container-low": "#1b1b1b",
+                    "on-secondary-fixed-variant": "#454747",
+                    "error-red": "#FF3B30",
+                    "on-error": "#690005",
+                    "surface-dim": "#131313",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "surface-tint": "#aed53c",
+                    "on-primary-fixed": "#161f00",
+                    "surface-container": "#1f1f1f",
+                    "secondary-container": "#454747",
+                    "surface": "#131313",
+                    "primary-container": "#c9f156"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "48px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Cairo"],
+                    "display-xl-mobile": ["Cairo"],
+                    "label-caps": ["JetBrains Mono"],
+                    "display-xl": ["Cairo"],
+                    "headline-md": ["Cairo"],
+                    "body-lg": ["Tajawal"],
+                    "headline-lg-mobile": ["Cairo"],
+                    "body-md": ["Tajawal"],
+                    "data-mono": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "800"}],
+                    "display-xl-mobile": ["48px", {"lineHeight": "52px", "fontWeight": "900"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "display-xl": ["96px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #131313; color: #e2e2e2; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #131313; }
+        ::-webkit-scrollbar-thumb { background: #1A1A1A; border: 1px solid #D6FF62; }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- Sidebar Navigation -->
+<aside class="fixed right-0 top-0 h-full w-80 bg-background z-50 border-l border-dark-grey flex flex-col rtl hidden md:flex">
+<div class="p-8 flex flex-col gap-2">
+<div class="font-headline-md text-headline-md font-black text-electric-lime">Stocker</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant opacity-60">البورصة المصرية</div>
+</div>
+<nav class="flex-1 mt-4">
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 w-full hover:bg-dark-grey hover:text-electric-lime transition-all duration-150" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-label-caps">الرئيسية</span>
+</a>
+<a class="flex items-center gap-4 bg-electric-lime text-absolute-black font-bold px-6 py-4 w-full" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-label-caps text-label-caps">بيانات</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 w-full hover:bg-dark-grey hover:text-electric-lime transition-all duration-150" href="#">
+<span class="material-symbols-outlined">public</span>
+<span class="font-label-caps text-label-caps">المحافظ العامة</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 w-full hover:bg-dark-grey hover:text-electric-lime transition-all duration-150" href="#">
+<span class="material-symbols-outlined">lock</span>
+<span class="font-label-caps text-label-caps">المحافظ الخاصة</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 w-full hover:bg-dark-grey hover:text-electric-lime transition-all duration-150" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-caps text-label-caps">مجتمع Stocker</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 w-full hover:bg-dark-grey hover:text-electric-lime transition-all duration-150" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-label-caps text-label-caps">المحفظة</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 w-full hover:bg-dark-grey hover:text-electric-lime transition-all duration-150" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-caps text-label-caps">حسابي</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-dark-grey p-4 flex flex-col gap-2">
+<button class="bg-electric-lime text-absolute-black font-bold py-4 px-6 w-full flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span>تداول الآن</span>
+<span class="material-symbols-outlined">trending_up</span>
+</button>
+<div class="flex flex-col">
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-3 w-full hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps">الإعدادات</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-3 w-full hover:text-error-red transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-caps text-label-caps">تسجيل الخروج</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:mr-80 min-h-screen">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-40 flex flex-row-reverse justify-between items-center w-full px-8 py-4 bg-background border-b border-dark-grey">
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-electric-lime cursor-pointer">notifications</span>
+<div class="flex items-center gap-2 px-3 py-1 bg-dark-grey border border-dark-grey">
+<span class="material-symbols-outlined text-electric-lime">account_balance_wallet</span>
+<span class="font-data-mono text-data-mono text-white">42,500.00 EGP</span>
+</div>
+</div>
+<div class="w-10 h-10 bg-dark-grey flex items-center justify-center border border-dark-grey overflow-hidden">
+<img alt="Profile" class="w-full h-full object-cover" data-alt="A professional headshot of a Middle Eastern financial analyst in a crisp white shirt, set against a dark, minimalist architectural background. The lighting is dramatic and high-contrast, echoing a high-end corporate fintech aesthetic. The image uses a cool-toned palette with sharp focus on the eyes, projecting confidence and technical expertise in a modern trading environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdtWPdllETkvJCo8Jboj2ikPCq553_43J9YGlF8teFvCCt6NWhc3nxpKilwyPJqPeYTmBvY7BbV_aRbD7Zxc1WX66B8-7XNUdojYp9_X8kr7IFXWDS0LTVJHie3JgfHHiDoA1kMXlY1jsxXdUuYGzTvObo7HSLP98MtyWjWP623IpNYkqhrnvAcfcdLPpTNQMa4dlv-oftkm76l8tlPNPButVqpm2lNWoYGmY2yZtytrYyEtdaSlDpHpUL1VW4wMMPjSPJueeYH7Q"/>
+</div>
+</div>
+<div class="flex-1 max-w-xl mx-8 relative hidden md:block">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-dark-grey border-none focus:ring-1 focus:ring-electric-lime py-2 pr-10 text-white font-body-md" placeholder="بحث عن قطاعات أو شركات..." type="text"/>
+</div>
+<div class="font-headline-md text-headline-md font-black text-electric-lime tracking-tighter md:hidden">Stocker</div>
+</header>
+<!-- View Content -->
+<div class="px-8 py-10 max-w-7xl mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-white mb-2">بيانات السوق</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">نظرة عامة على قطاعات البورصة المصرية وأدائها اللحظي</p>
+</div>
+<div class="flex gap-4">
+<div class="px-4 py-2 bg-dark-grey border-b-2 border-electric-lime">
+<span class="font-label-caps text-label-caps text-electric-lime">مفتوح - EGX30</span>
+</div>
+<div class="px-4 py-2 bg-dark-grey border-b-2 border-on-surface-variant opacity-40">
+<span class="font-label-caps text-label-caps text-white">EGX70 EWI</span>
+</div>
+</div>
+</div>
+<!-- Bento Grid - Key Sector Highlights -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+<!-- Highlight: Banking -->
+<div class="bg-dark-grey p-6 flex flex-col justify-between border-r-4 border-electric-lime">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-electric-lime">account_balance</span>
+<span class="font-data-mono text-data-mono text-success-green">+2.45%</span>
+</div>
+<div class="mt-8">
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase">Banking Sector</div>
+<div class="font-headline-md text-headline-md text-white">البنوك</div>
+</div>
+</div>
+<!-- Highlight: Real Estate -->
+<div class="bg-dark-grey p-6 flex flex-col justify-between border-r-4 border-white">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-white">domain</span>
+<span class="font-data-mono text-data-mono text-success-green">+1.12%</span>
+</div>
+<div class="mt-8">
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase">Real Estate</div>
+<div class="font-headline-md text-headline-md text-white">العقارات</div>
+</div>
+</div>
+<!-- Highlight: Energy -->
+<div class="bg-dark-grey p-6 flex flex-col justify-between border-r-4 border-error-red">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-on-surface-variant">bolt</span>
+<span class="font-data-mono text-data-mono text-error-red">-0.84%</span>
+</div>
+<div class="mt-8">
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase">Energy</div>
+<div class="font-headline-md text-headline-md text-white">الطاقة</div>
+</div>
+</div>
+<!-- Highlight: Tourism -->
+<div class="bg-dark-grey p-6 flex flex-col justify-between border-r-4 border-electric-lime">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-electric-lime">beach_access</span>
+<span class="font-data-mono text-data-mono text-success-green">+4.20%</span>
+</div>
+<div class="mt-8">
+<div class="font-label-caps text-label-caps text-on-surface-variant uppercase">Tourism</div>
+<div class="font-headline-md text-headline-md text-white">السياحة</div>
+</div>
+</div>
+</div>
+<!-- Market Analysis Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+<!-- Detailed Table -->
+<div class="lg:col-span-2 bg-absolute-black border border-dark-grey">
+<div class="p-6 border-b border-dark-grey flex justify-between items-center">
+<h2 class="font-headline-md text-headline-md text-white">أداء القطاعات</h2>
+<button class="font-label-caps text-label-caps text-electric-lime flex items-center gap-2">
+<span>تصدير البيانات</span>
+<span class="material-symbols-outlined text-base">download</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-right">
+<thead>
+<tr class="bg-dark-grey">
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant">القطاع</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant">التغيير %</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant">حجم التداول</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant">القيمة السوقية</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-on-surface-variant">الحالة</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-dark-grey">
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="px-6 py-6 flex items-center gap-3">
+<div class="w-2 h-8 bg-electric-lime"></div>
+<span class="font-body-lg text-body-lg text-white">البنوك والخدمات المالية</span>
+</td>
+<td class="px-6 py-6 font-data-mono text-data-mono text-success-green">+2.45%</td>
+<td class="px-6 py-6 font-data-mono text-data-mono text-white">14.2M</td>
+<td class="px-6 py-6 font-data-mono text-data-mono text-on-surface-variant">420B EGP</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-electric-lime"></div>
+<span class="font-label-caps text-label-caps text-electric-lime">نشط</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-6 py-6 flex items-center gap-3">
+<div class="w-2 h-8 bg-pure-white"></div>
+<span class="font-body-lg text-body-lg text-white">العقارات والإنشاءات</span>
+</td>
+<td class="px-6 py-6 font-data-mono text-data-mono text-success-green">+1.12%</td>
+<td class="px-6 py-6 font-data-mono text-data-mono text-white">28.5M</td>
+<td class="px-6 py-6 font-data-mono text-data-mono text-on-surface-variant">185B EGP</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-electric-lime"></div>
+<span class="font-label-caps text-label-caps text-electric-lime">نشط</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-6 py-6 flex items-center gap-3">
+<div class="w-2 h-8 bg-dark-grey"></div>
+<span class="font-body-lg text-body-lg text-white">الموارد الأساسية والطاقة</span>
+</td>
+<td class="px-6 py-6 font-data-mono text-data-mono text-error-red">-0.84%</td>
+<td class="px-6 py-6 font-data-mono text-data-mono text-white">5.1M</td>
+<td class="px-6 py-6 font-data-mono text-data-mono text-on-surface-variant">312B EGP</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-2 opacity-50">
+<div class="w-2 h-2 bg-on-surface-variant"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">مستقر</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-6 py-6 flex items-center gap-3">
+<div class="w-2 h-8 bg-electric-lime"></div>
+<span class="font-body-lg text-body-lg text-white">السياحة والترفيه</span>
+</td>
+<td class="px-6 py-6 font-data-mono text-data-mono text-success-green">+4.20%</td>
+<td class="px-6 py-6 font-data-mono text-data-mono text-white">1.2M</td>
+<td class="px-6 py-6 font-data-mono text-data-mono text-on-surface-variant">45B EGP</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 bg-electric-lime"></div>
+<span class="font-label-caps text-label-caps text-electric-lime">طفرة</span>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="px-6 py-6 flex items-center gap-3">
+<div class="w-2 h-8 bg-pure-white"></div>
+<span class="font-body-lg text-body-lg text-white">الأغذية والمشروبات</span>
+</td>
+<td class="px-6 py-6 font-data-mono text-data-mono text-success-green">+0.05%</td>
+<td class="px-6 py-6 font-data-mono text-data-mono text-white">8.9M</td>
+<td class="px-6 py-6 font-data-mono text-data-mono text-on-surface-variant">120B EGP</td>
+<td class="px-6 py-6">
+<div class="flex items-center gap-2 opacity-50">
+<div class="w-2 h-2 bg-on-surface-variant"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">مستقر</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Secondary Stats / Asymmetric Column -->
+<div class="flex flex-col gap-8">
+<!-- Live Chart Visualization Placeholder -->
+<div class="bg-dark-grey border-l border-t border-dark-grey p-8 relative overflow-hidden h-[320px]">
+<div class="relative z-10">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-4">Market Trend / 24H</div>
+<div class="font-headline-md text-headline-md text-white mb-8">اتجاه السوق العام</div>
+<div class="flex items-end gap-2 h-32">
+<div class="w-full bg-electric-lime opacity-20 h-1/2"></div>
+<div class="w-full bg-electric-lime opacity-40 h-2/3"></div>
+<div class="w-full bg-electric-lime opacity-60 h-3/4"></div>
+<div class="w-full bg-electric-lime opacity-80 h-1/2"></div>
+<div class="w-full bg-electric-lime h-full"></div>
+<div class="w-full bg-electric-lime opacity-90 h-5/6"></div>
+</div>
+</div>
+<div class="absolute inset-0 pointer-events-none flex items-center justify-center opacity-5">
+<span class="material-symbols-outlined text-[200px]">trending_up</span>
+</div>
+</div>
+<!-- Market Sentiment Card -->
+<div class="bg-electric-lime p-8 flex flex-col items-center text-center">
+<div class="font-label-caps text-label-caps text-absolute-black mb-2">Market Sentiment</div>
+<div class="font-headline-lg text-headline-lg text-absolute-black tracking-tighter">BULLISH</div>
+<div class="w-full h-1 bg-absolute-black my-4"></div>
+<p class="font-body-md text-body-md text-absolute-black">الثقة مرتفعة حالياً في قطاعي البنوك والسياحة. ننصح بمراقبة أحجام التداول في العقارات.</p>
+</div>
+<!-- Quick Action Chips -->
+<div class="bg-dark-grey p-6">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-4">تصنيفات سريعة</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-absolute-black border border-dark-grey px-4 py-2 font-label-caps text-label-caps text-white hover:border-electric-lime cursor-pointer">الأكثر ربحية</span>
+<span class="bg-absolute-black border border-dark-grey px-4 py-2 font-label-caps text-label-caps text-white hover:border-electric-lime cursor-pointer">الأكثر تداولاً</span>
+<span class="bg-absolute-black border border-dark-grey px-4 py-2 font-label-caps text-label-caps text-white hover:border-electric-lime cursor-pointer">جديد الإدراج</span>
+<span class="bg-absolute-black border border-dark-grey px-4 py-2 font-label-caps text-label-caps text-white hover:border-electric-lime cursor-pointer">أسهم قيادية</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Promotion / Gift Card Section -->
+<section class="mt-section-gap">
+<div class="bg-dark-grey p-1 flex items-center group">
+<div class="flex-1 p-10 bg-absolute-black border border-dark-grey flex flex-col md:flex-row items-center gap-12 group-hover:border-electric-lime transition-colors">
+<div class="w-full md:w-1/3 aspect-[4/3] bg-dark-grey relative overflow-hidden">
+<img alt="Investment Gift" class="w-full h-full object-cover grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500" data-alt="A futuristic, high-contrast digital representation of a stock market trading floor illuminated by vibrant electric lime neon data streams. The scene is set in a dark, brutalist environment with sharp-edged architectural elements. Multiple monitors show complex financial charts and Egyptian Exchange symbols, creating an atmosphere of intense professional investment and technical sophistication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIkjHFiM39tO0nJv5tyz8K_aEkJfeHNO9UQM0i3Z8chvZRbnhJb6SvW7zPmiVcwMeb1hezJ_G4I5dPlDb88HrPaVIM8C9eoEy8TxCPOm_LXeF_zhbfVBIuesrJ-xSR-yNQhkSkvr6976o4h4DKO8qiDXzT7x234Bo4yP3lPEFJAakhCI-UHTlQJ09XDcc76348GaISSJdLS6__UtF1HGtEP62ks3DHMCnGBDA4gteIE2KeVJcKO_9twDnWVxzQVG4h953FiQTuhKI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-absolute-black to-transparent"></div>
+<div class="absolute bottom-6 right-6">
+<span class="font-display-xl text-headline-lg text-electric-lime">EGX</span>
+</div>
+</div>
+<div class="flex-1 space-y-6">
+<div class="inline-block px-3 py-1 bg-electric-lime text-absolute-black font-label-caps text-label-caps">STOKER EXCLUSIVE</div>
+<h2 class="font-headline-lg text-headline-lg text-white leading-none">ابدأ الاستثمار مع Stocker Gift Cards</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">أهدي أحباءك فرصة دخول عالم البورصة المصرية. بطاقات هدايا استثمارية رقمية بقيم تبدأ من 500 جنيه مصري، قابلة للاسترداد فوراً في أي قطاع من اختيارهم.</p>
+<button class="bg-electric-lime text-absolute-black font-bold py-5 px-10 flex items-center gap-4 hover:scale-95 transition-transform">
+<span class="font-label-caps text-label-caps">اكتشف بطاقات الهدايا</span>
+<span class="material-symbols-outlined">card_giftcard</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Bottom Nav for Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-background border-t border-dark-grey flex justify-around items-center py-4 z-50">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-label-caps">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-electric-lime" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-[10px] font-label-caps">بيانات</span>
+</a>
+<div class="relative -top-6">
+<button class="bg-electric-lime w-14 h-14 flex items-center justify-center text-absolute-black shadow-[0_0_15px_rgba(214,255,98,0.4)]">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-[10px] font-label-caps">المحفظة</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-label-caps">حسابي</span>
+</a>
+</nav>
+</body></html>

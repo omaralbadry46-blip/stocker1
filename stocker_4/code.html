@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stocker - إنشاء منشور جديد</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&amp;family=Tajawal:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            background-color: #000000;
+            color: #e2e2e2;
+            font-family: 'Tajawal', sans-serif;
+            overflow: hidden; /* Prevent scrolling behind modal */
+        }
+        .zero-radius {
+            border-radius: 0 !important;
+        }
+        .glow-lime:focus-within {
+            box-shadow: 0 0 10px 0 rgba(214, 255, 98, 0.3);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#93000a",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container-low": "#1b1b1b",
+                    "surface-bright": "#393939",
+                    "inverse-on-surface": "#303030",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-surface-variant": "#c5c9b1",
+                    "absolute-black": "#000000",
+                    "surface-container-highest": "#353535",
+                    "secondary": "#c6c6c7",
+                    "on-primary": "#283500",
+                    "on-secondary-container": "#b4b5b5",
+                    "surface": "#131313",
+                    "success-green": "#2ECC71",
+                    "secondary-container": "#454747",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "on-tertiary": "#313030",
+                    "background": "#131313",
+                    "surface-dim": "#131313",
+                    "primary-fixed": "#c9f156",
+                    "on-error": "#690005",
+                    "outline-variant": "#444936",
+                    "surface-variant": "#353535",
+                    "primary": "#ffffff",
+                    "on-surface": "#e2e2e2",
+                    "inverse-surface": "#e2e2e2",
+                    "inverse-primary": "#4f6600",
+                    "primary-fixed-dim": "#aed53c",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "primary-container": "#c9f156",
+                    "tertiary-container": "#e5e2e1",
+                    "tertiary-fixed": "#e5e2e1",
+                    "surface-container-high": "#2a2a2a",
+                    "tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#3b4d00",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-secondary-fixed-variant": "#454747",
+                    "error-red": "#FF3B30",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-error-container": "#ffdad6",
+                    "pure-white": "#FFFFFF",
+                    "on-primary-fixed": "#161f00",
+                    "electric-lime": "#D6FF62",
+                    "on-primary-container": "#556d00",
+                    "on-background": "#e2e2e2",
+                    "error": "#ffb4ab",
+                    "surface-container": "#1f1f1f",
+                    "on-tertiary-container": "#656464",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-secondary": "#2f3131",
+                    "dark-grey": "#1A1A1A",
+                    "outline": "#8f937d",
+                    "surface-tint": "#aed53c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "section-gap": "48px",
+                    "margin-desktop": "64px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "label-caps": ["jetbrainsMono"],
+                    "body-lg": ["Tajawal"],
+                    "headline-lg-mobile": ["Cairo"],
+                    "display-xl-mobile": ["Cairo"],
+                    "body-md": ["Tajawal"],
+                    "headline-lg": ["Cairo"],
+                    "data-mono": ["jetbrainsMono"],
+                    "headline-md": ["Cairo"],
+                    "display-xl": ["Cairo"]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-absolute-black min-h-screen flex flex-col">
+<!-- Background Content Simulator (Blurred Community Feed) -->
+<main class="flex-grow p-margin-mobile md:p-margin-desktop opacity-20 pointer-events-none">
+<div class="max-w-4xl mx-auto space-y-gutter">
+<div class="h-64 bg-dark-grey border border-surface-variant flex items-center justify-center">
+<span class="font-headline-md text-on-surface-variant">مجتمع Stocker</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="h-40 bg-dark-grey"></div>
+<div class="h-40 bg-dark-grey"></div>
+</div>
+</div>
+</main>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-absolute-black/80 backdrop-blur-sm">
+<!-- Create Post Modal Container -->
+<div class="bg-dark-grey w-full max-w-2xl border border-surface-variant zero-radius flex flex-col shadow-2xl">
+<!-- Modal Header -->
+<div class="flex flex-row-reverse justify-between items-center p-6 border-b border-surface-variant">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-electric-lime">add_circle</span>
+<h2 class="font-headline-md text-headline-md text-pure-white">إنشاء منشور جديد</h2>
+</div>
+<button class="text-on-surface-variant hover:text-electric-lime transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Content -->
+<div class="p-6 space-y-6">
+<!-- User Context -->
+<div class="flex items-center gap-4">
+<img alt="User Profile" class="w-12 h-12 rounded-full border border-surface-variant" data-alt="A professional Middle Eastern businesswoman with a kind expression, wearing a navy blue corporate suit and a patterned silk scarf. She has dark hair styled neatly. The lighting is soft and studio-quality against a clean, neutral grey background, embodying high-end corporate reliability and modern Egyptian fintech professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZajBHfJiM6vWfwAbwRyUWoKYlP4ep1A7fIDHeKZiNEjZxMUQgdkNGgS92I7fwCWCcdU_JGjihXVOMHeTtaRztaltjiPU9N8LuEs7hy3c2TzdZ9o3jToJfRZ4Yokahosop_3g8RomIVPBsAdyuAJppeIEVCozX3D698C5eE4CkpxdJmUb_OosxrsCvQ7nkt4x-Okoh1VBTLjE0I6mzyVoIHK16mGOGVvNYXeiCyweUJ5RHmzYtSHmvqLTtv-cyrUany7xf1fR2bsg"/>
+<div>
+<p class="font-body-lg text-body-lg text-pure-white leading-none">مريم العمري</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">@Mariam_Invests</p>
+</div>
+</div>
+<!-- Analysis Text Area -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-electric-lime block">تحليل السوق</label>
+<textarea class="w-full h-32 bg-surface-container-lowest border-b-2 border-pure-white focus:border-electric-lime focus:ring-0 text-pure-white font-body-md text-body-md placeholder:text-on-surface-variant transition-colors p-4 resize-none" placeholder="ما هو تحليلك لاتجاهات السوق اليوم؟..."></textarea>
+</div>
+<!-- Stock & Sentiment Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Stock Selector -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant block">اختيار السهم</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest border-b-2 border-pure-white focus:border-electric-lime text-pure-white font-data-mono text-data-mono p-3 appearance-none zero-radius">
+<option>EGTS.CA (المصرية للمنتجعات)</option>
+<option>COMI.CA (البنك التجاري الدولي)</option>
+<option>EAST.CA (الشرقية للدخان)</option>
+<option>FWRY.CA (فوري)</option>
+</select>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Sentiment Toggles -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant block">توقعك للاتجاه</label>
+<div class="flex gap-2">
+<button class="flex-1 py-3 border border-electric-lime bg-electric-lime text-absolute-black font-bold flex items-center justify-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<span class="font-label-caps">BULLISH</span>
+</button>
+<button class="flex-1 py-3 border border-surface-variant text-on-surface-variant font-bold flex items-center justify-center gap-2 hover:border-error-red hover:text-error-red transition-all">
+<span class="material-symbols-outlined">trending_down</span>
+<span class="font-label-caps">BEARISH</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Image Upload / Drag and Drop -->
+<div class="border-2 border-dashed border-surface-variant p-8 flex flex-col items-center justify-center gap-3 bg-surface-container-low hover:border-electric-lime group transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-electric-lime">add_photo_alternate</span>
+<div class="text-center">
+<p class="font-body-md text-body-md text-pure-white">اسحب المخططات البيانية هنا</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">PNG, JPG حتى 5 ميجابايت</p>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-6 bg-surface-container-lowest flex flex-row-reverse items-center justify-between border-t border-surface-variant">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="hover:text-electric-lime transition-colors"><span class="material-symbols-outlined">attach_file</span></button>
+<button class="hover:text-electric-lime transition-colors"><span class="material-symbols-outlined">bar_chart</span></button>
+<button class="hover:text-electric-lime transition-colors"><span class="material-symbols-outlined">alternate_email</span></button>
+</div>
+<div class="flex gap-4">
+<button class="px-8 py-3 bg-electric-lime text-absolute-black font-headline-md text-body-md font-bold active:opacity-80 transition-all">
+                        نشر في المجتمع
+                    </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Background Decoration -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none opacity-5">
+<div class="absolute top-1/4 right-0 w-1/2 h-px bg-electric-lime"></div>
+<div class="absolute top-1/2 left-0 w-1/3 h-px bg-electric-lime"></div>
+</div>
+</body></html>

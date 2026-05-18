@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&amp;family=Tajawal:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error": "#ffb4ab",
+                        "error-red": "#FF3B30",
+                        "on-secondary-container": "#b4b5b5",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#c9f156",
+                        "inverse-on-surface": "#303030",
+                        "surface-tint": "#aed53c",
+                        "secondary": "#c6c6c7",
+                        "on-surface": "#e2e2e2",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "surface-dim": "#131313",
+                        "success-green": "#2ECC71",
+                        "on-primary-fixed": "#161f00",
+                        "primary-fixed": "#c9f156",
+                        "surface-bright": "#393939",
+                        "surface-container-lowest": "#0e0e0e",
+                        "background": "#131313",
+                        "on-primary-container": "#556d00",
+                        "outline": "#8f937d",
+                        "dark-grey": "#1A1A1A",
+                        "surface-container-highest": "#353535",
+                        "on-surface-variant": "#c5c9b1",
+                        "on-background": "#e2e2e2",
+                        "on-primary": "#283500",
+                        "absolute-black": "#000000",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-secondary": "#2f3131",
+                        "on-tertiary-container": "#656464",
+                        "surface": "#131313",
+                        "secondary-container": "#454747",
+                        "primary": "#ffffff",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-tertiary": "#313030",
+                        "electric-lime": "#D6FF62",
+                        "pure-white": "#FFFFFF",
+                        "outline-variant": "#444936",
+                        "inverse-surface": "#e2e2e2",
+                        "surface-variant": "#353535",
+                        "primary-fixed-dim": "#aed53c",
+                        "surface-container-low": "#1b1b1b",
+                        "surface-container": "#1f1f1f",
+                        "tertiary-container": "#e5e2e1",
+                        "tertiary": "#ffffff",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-primary": "#4f6600",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-primary-fixed-variant": "#3b4d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "section-gap": "48px",
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "display-xl": ["Cairo"],
+                        "data-mono": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Cairo"],
+                        "body-md": ["Tajawal"],
+                        "headline-md": ["Cairo"],
+                        "body-lg": ["Tajawal"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg": ["Cairo"],
+                        "display-xl-mobile": ["Cairo"]
+                    },
+                    "fontSize": {
+                        "display-xl": ["96px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "800"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "52px", "fontWeight": "900"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #000000;
+            color: #e2e2e2;
+        }
+        .chart-gradient-1 {
+            background: linear-gradient(180deg, rgba(214, 255, 98, 0.2) 0%, rgba(214, 255, 98, 0) 100%);
+        }
+        .chart-gradient-2 {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-absolute-black font-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-absolute-black border-b border-surface-variant flex flex-row-reverse justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 sticky top-0 z-50">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-electric-lime cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-electric-lime cursor-pointer" data-icon="flag">flag</span>
+</div>
+<div class="text-electric-lime font-headline-md font-black text-headline-md">Stocker</div>
+<div class="hidden md:flex flex-row-reverse items-center bg-dark-grey px-4 py-2 border border-surface-variant">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-on-surface text-label-caps font-label-caps pr-2 w-64" placeholder="بحث عن صناديق..." type="text"/>
+</div>
+</header>
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden md:flex flex-col fixed right-0 top-0 h-full z-40 py-8 w-64 bg-absolute-black border-l border-surface-variant">
+<div class="text-headline-md font-headline-md text-electric-lime px-margin-mobile mb-8">Stocker</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-body-md font-body-md">الرئيسية</span>
+</a>
+<a class="flex items-center gap-4 text-electric-lime border-r-4 border-electric-lime bg-surface-container-low px-4 py-3 translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-body-md font-body-md">بيانات</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-body-md font-body-md">مجتمع Stocker</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="text-body-md font-body-md">المحفظة</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-body-md font-body-md">حسابي</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content -->
+<main class="md:pr-64 pb-24 md:pb-0">
+<div class="px-margin-mobile md:px-margin-desktop py-8">
+<!-- Header Section -->
+<div class="flex justify-between items-end mb-section-gap">
+<div>
+<h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-pure-white mb-2">مقارنة الصناديق</h1>
+<p class="text-on-surface-variant text-body-md">تحليل الأداء والمخاطر لأهم الصناديق الاستثمارية في السوق المصري</p>
+</div>
+<button class="bg-electric-lime text-absolute-black px-6 py-3 font-bold text-label-caps hidden md:flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                    إضافة صندوق للمقارنة
+                </button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Performance Chart Container -->
+<div class="lg:col-span-8 bg-dark-grey p-6 border-b-2 border-surface-variant">
+<div class="flex justify-between items-center mb-8">
+<h2 class="text-headline-md font-headline-md text-pure-white">مخطط الأداء التراكمي</h2>
+<div class="flex gap-4">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-electric-lime"></div>
+<span class="text-label-caps font-label-caps text-on-surface-variant">صندوق النمو التقني</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 bg-pure-white"></div>
+<span class="text-label-caps font-label-caps text-on-surface-variant">محفظة الاستقرار</span>
+</div>
+</div>
+</div>
+<!-- Chart Placeholder Visual -->
+<div class="relative h-[300px] w-full border-b border-l border-surface-variant mb-4 overflow-hidden">
+<!-- Simulated Chart Grid -->
+<div class="absolute inset-0 grid grid-cols-6 border-r border-surface-variant opacity-10">
+<div class="border-r border-surface-variant"></div>
+<div class="border-r border-surface-variant"></div>
+<div class="border-r border-surface-variant"></div>
+<div class="border-r border-surface-variant"></div>
+<div class="border-r border-surface-variant"></div>
+<div></div>
+</div>
+<!-- Trend Line 1 (Growth) -->
+<svg class="absolute bottom-0 left-0 w-full h-full preserve-3d" preserveaspectratio="none" viewbox="0 0 1000 300">
+<path d="M0,280 Q100,250 200,260 T400,180 T600,120 T800,80 T1000,40" fill="none" stroke="#D6FF62" stroke-width="4"></path>
+<path d="M0,280 Q100,250 200,260 T400,180 T600,120 T800,80 T1000,40 V300 H0 Z" fill="url(#grad-lime)" opacity="0.2"></path>
+<defs>
+<lineargradient id="grad-lime" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#D6FF62;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#D6FF62;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- Trend Line 2 (Stability) -->
+<svg class="absolute bottom-0 left-0 w-full h-full" preserveaspectratio="none" viewbox="0 0 1000 300">
+<path d="M0,270 Q150,260 300,240 T600,220 T900,190 T1000,185" fill="none" stroke="#FFFFFF" stroke-width="4"></path>
+<path d="M0,270 Q150,260 300,240 T600,220 T900,190 T1000,185 V300 H0 Z" fill="url(#grad-white)" opacity="0.1"></path>
+<defs>
+<lineargradient id="grad-white" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+<div class="flex justify-between text-label-caps font-label-caps text-on-surface-variant">
+<span>يناير</span>
+<span>فبراير</span>
+<span>مارس</span>
+<span>ابريل</span>
+<span>مايو</span>
+<span>يونيو</span>
+</div>
+</div>
+<!-- Comparison Cards (Right Side Mobile, Grid Desktop) -->
+<div class="lg:col-span-4 space-y-gutter">
+<div class="bg-dark-grey p-6 border-r-4 border-electric-lime">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="bg-surface-variant text-electric-lime px-2 py-1 text-label-caps font-label-caps mb-2 inline-block">الأعلى نمواً</span>
+<h3 class="text-headline-md font-headline-md text-pure-white">صندوق النمو التقني</h3>
+</div>
+<span class="material-symbols-outlined text-electric-lime" data-icon="trending_up">trending_up</span>
+</div>
+<div class="text-display-xl-mobile md:text-headline-lg font-black text-electric-lime mb-2">+24.8%</div>
+<p class="text-on-surface-variant text-label-caps font-label-caps">عائد الـ 30 يوم الماضية</p>
+</div>
+<div class="bg-dark-grey p-6 border-r-4 border-pure-white">
+<div class="flex justify-between items-start mb-4">
+<div>
+<span class="bg-surface-variant text-pure-white px-2 py-1 text-label-caps font-label-caps mb-2 inline-block">الأكثر استقراراً</span>
+<h3 class="text-headline-md font-headline-md text-pure-white">محفظة الاستقرار</h3>
+</div>
+<span class="material-symbols-outlined text-pure-white" data-icon="shield">shield</span>
+</div>
+<div class="text-display-xl-mobile md:text-headline-lg font-black text-pure-white mb-2">+4.2%</div>
+<p class="text-on-surface-variant text-label-caps font-label-caps">عائد الـ 30 يوم الماضية</p>
+</div>
+</div>
+<!-- Comparison Table -->
+<div class="lg:col-span-12 overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="border-b border-surface-variant">
+<th class="py-6 px-4 text-label-caps font-label-caps text-on-surface-variant">المعيار</th>
+<th class="py-6 px-4 text-headline-md font-headline-md text-electric-lime">صندوق النمو التقني</th>
+<th class="py-6 px-4 text-headline-md font-headline-md text-pure-white">محفظة الاستقرار</th>
+</tr>
+</thead>
+<tbody class="text-body-md">
+<tr class="border-b border-dark-grey hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-4 text-on-surface-variant font-bold">مستوى المخاطرة</td>
+<td class="py-6 px-4">
+<div class="flex items-center gap-2">
+<div class="flex gap-1">
+<div class="w-3 h-3 bg-electric-lime"></div>
+<div class="w-3 h-3 bg-electric-lime"></div>
+<div class="w-3 h-3 bg-electric-lime"></div>
+<div class="w-3 h-3 bg-electric-lime"></div>
+<div class="w-3 h-3 bg-surface-variant"></div>
+</div>
+<span class="text-label-caps">عالي جداً</span>
+</div>
+</td>
+<td class="py-6 px-4">
+<div class="flex items-center gap-2">
+<div class="flex gap-1">
+<div class="w-3 h-3 bg-pure-white"></div>
+<div class="w-3 h-3 bg-surface-variant"></div>
+<div class="w-3 h-3 bg-surface-variant"></div>
+<div class="w-3 h-3 bg-surface-variant"></div>
+<div class="w-3 h-3 bg-surface-variant"></div>
+</div>
+<span class="text-label-caps">منخفض</span>
+</div>
+</td>
+</tr>
+<tr class="border-b border-dark-grey hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-4 text-on-surface-variant font-bold">رسوم الإدارة</td>
+<td class="py-6 px-4 font-data-mono text-electric-lime">1.5% سنويًا</td>
+<td class="py-6 px-4 font-data-mono text-pure-white">0.4% سنويًا</td>
+</tr>
+<tr class="border-b border-dark-grey hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-4 text-on-surface-variant font-bold">الحد الأدنى للدخول</td>
+<td class="py-6 px-4 font-data-mono text-electric-lime">10,000 EGP</td>
+<td class="py-6 px-4 font-data-mono text-pure-white">500 EGP</td>
+</tr>
+<tr class="border-b border-dark-grey hover:bg-surface-container-low transition-colors">
+<td class="py-6 px-4 text-on-surface-variant font-bold">توزيع الأصول</td>
+<td class="py-6 px-4">
+<div class="space-y-2">
+<div class="flex justify-between text-label-caps">
+<span>أسهم تكنولوجية</span>
+<span>85%</span>
+</div>
+<div class="w-full bg-surface-variant h-1">
+<div class="bg-electric-lime h-full w-[85%]"></div>
+</div>
+<div class="flex justify-between text-label-caps opacity-50">
+<span>سيولة نقدية</span>
+<span>15%</span>
+</div>
+</div>
+</td>
+<td class="py-6 px-4">
+<div class="space-y-2">
+<div class="flex justify-between text-label-caps">
+<span>سندات حكومية</span>
+<span>70%</span>
+</div>
+<div class="w-full bg-surface-variant h-1">
+<div class="bg-pure-white h-full w-[70%]"></div>
+</div>
+<div class="flex justify-between text-label-caps">
+<span>ذهب</span>
+<span>20%</span>
+</div>
+<div class="w-full bg-surface-variant h-1">
+<div class="bg-pure-white h-full w-[20%] opacity-60"></div>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Asset Photos (Atmospheric) -->
+<div class="lg:col-span-6 overflow-hidden">
+<img alt="Technology Investing" class="w-full h-48 object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-500" data-alt="A macro photograph of a high-tech glowing semiconductor microchip circuit board, illuminated with intense neon electric lime lighting in a pitch-black environment. The style is ultra-modern and technical, suggesting high-performance computing and advanced financial technology. The atmosphere is sharp, professional, and sophisticated, aligning with a high-contrast dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChsiTh1MZlUU4q2fVq4xthsyHfjVDd_rsuvO56Keqc8-HjygCS9jHur69QlD4jcmmjKlQpzLx4Gn7XFi2TOJHCGYBW3jWf29xsSXHPo5Yh381-bo_FG0uQMUk-q7wwEhyNPSzsvaI_HYfkuDfhKx76sp-5CgWkm7xOzBKq2Q7JPix-rNcEHHt9qd0g5qP5UlFYq6PQF3vaZ6sSXlAfRth4xA4NIdWWe1IAkoOPKz1ZPIEllIiRE65gG7vtEnApjFnZ3UCiVVXFUtI"/>
+</div>
+<div class="lg:col-span-6 overflow-hidden">
+<img alt="Stable Assets" class="w-full h-48 object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-500" data-alt="A collection of pristine gold bars stacked systematically in a high-security vault, captured with professional studio lighting that emphasizes sharp edges and high contrast. The scene is set against a deep black background with cold white highlights, creating a sense of absolute stability, structural integrity, and conservative financial wealth. The mood is serene and unshakeable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBT5fiK0o6Osa_ko8_WJgxQ6YPvWd00k5oKIP7UelnsQQze-ntjkVTEipGY22zbX--WtE1JnWHXouonZy6xG-0pAWy1oHuj1MWdnSEmlwrMJgGLfdtwzvhBDxexR76s4SGupx53pwp-uD4B0DT8NXiCLm1jBFViYkPM92QN9U4p05cet2dq05kfpG0rpFhQ7G6g_vQERrjFG8SlFcgxYQOo5JirHftYDRHGw-oPw-SU21fvjHqbtSi1R5AvvAqdEKyShACAjXOPGo"/>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<footer class="md:hidden fixed bottom-0 left-0 w-full z-50 flex flex-row-reverse justify-around items-center py-2 bg-absolute-black border-t border-surface-variant">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-pure-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-caps font-label-caps">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center text-electric-lime font-bold scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-label-caps font-label-caps">بيانات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-pure-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-label-caps font-label-caps">مجتمع Stocker</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-pure-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="text-label-caps font-label-caps">المحفظة</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-pure-white transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-label-caps font-label-caps">حسابي</span>
+</a>
+</footer>
+</body></html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>مجتمع Stocker - Empty State</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&amp;family=Tajawal:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#93000a",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container-low": "#1b1b1b",
+                    "surface-bright": "#393939",
+                    "inverse-on-surface": "#303030",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-surface-variant": "#c5c9b1",
+                    "absolute-black": "#000000",
+                    "surface-container-highest": "#353535",
+                    "secondary": "#c6c6c7",
+                    "on-primary": "#283500",
+                    "on-secondary-container": "#b4b5b5",
+                    "surface": "#131313",
+                    "success-green": "#2ECC71",
+                    "secondary-container": "#454747",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "on-tertiary": "#313030",
+                    "background": "#131313",
+                    "surface-dim": "#131313",
+                    "primary-fixed": "#c9f156",
+                    "on-error": "#690005",
+                    "outline-variant": "#444936",
+                    "surface-variant": "#353535",
+                    "primary": "#ffffff",
+                    "on-surface": "#e2e2e2",
+                    "inverse-surface": "#e2e2e2",
+                    "inverse-primary": "#4f6600",
+                    "primary-fixed-dim": "#aed53c",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "primary-container": "#c9f156",
+                    "tertiary-container": "#e5e2e1",
+                    "tertiary-fixed": "#e5e2e1",
+                    "surface-container-high": "#2a2a2a",
+                    "tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#3b4d00",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-secondary-fixed-variant": "#454747",
+                    "error-red": "#FF3B30",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-error-container": "#ffdad6",
+                    "pure-white": "#FFFFFF",
+                    "on-primary-fixed": "#161f00",
+                    "electric-lime": "#D6FF62",
+                    "on-primary-container": "#556d00",
+                    "on-background": "#e2e2e2",
+                    "error": "#ffb4ab",
+                    "surface-container": "#1f1f1f",
+                    "on-tertiary-container": "#656464",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-secondary": "#2f3131",
+                    "dark-grey": "#1A1A1A",
+                    "outline": "#8f937d",
+                    "surface-tint": "#aed53c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "section-gap": "48px",
+                    "margin-desktop": "64px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "label-caps": ["JetBrains Mono"],
+                    "body-lg": ["Tajawal"],
+                    "headline-lg-mobile": ["Cairo"],
+                    "display-xl-mobile": ["Cairo"],
+                    "body-md": ["Tajawal"],
+                    "headline-lg": ["Cairo"],
+                    "data-mono": ["JetBrains Mono"],
+                    "headline-md": ["Cairo"],
+                    "display-xl": ["Cairo"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+                    "display-xl-mobile": ["48px", {"lineHeight": "52px", "fontWeight": "900"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "800"}],
+                    "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "display-xl": ["96px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "900"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: #e2e2e2;
+            font-family: 'Tajawal', sans-serif;
+            overflow-x: hidden;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid #353535;
+        }
+        .lime-glow {
+            box-shadow: 0 0 20px rgba(214, 255, 98, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-absolute-black">
+<!-- Top AppBar (Mobile/Desktop) -->
+<header class="fixed top-0 right-0 w-full z-50 bg-absolute-black border-b border-surface-variant flex flex-row-reverse justify-between items-center px-margin-mobile md:px-margin-desktop py-4">
+<div class="flex items-center gap-6">
+<h1 class="text-headline-md font-headline-md font-black text-electric-lime">Stocker</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-electric-lime transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-electric-lime transition-colors">
+<span class="material-symbols-outlined">flag</span>
+</button>
+</div>
+</header>
+<!-- Side NavBar (Desktop) -->
+<nav class="hidden md:flex flex-col fixed right-0 top-0 h-full z-40 py-8 bg-absolute-black border-l border-surface-variant w-64 pt-24">
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-body-md font-body-md">الرئيسية</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-body-md font-body-md">بيانات</span>
+</a>
+<a class="flex items-center gap-4 text-electric-lime border-r-4 border-electric-lime bg-surface-container-low px-4 py-3 translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="text-body-md font-body-md">مجتمع Stocker</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-body-md font-body-md">المحفظة</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-body-md font-body-md">حسابي</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="min-h-screen pt-24 pb-20 md:pr-64 px-margin-mobile md:px-margin-desktop flex flex-col items-center justify-center">
+<!-- Empty State Container -->
+<div class="max-w-4xl w-full flex flex-col items-center text-center">
+<!-- Techno-Organic Center Illustration -->
+<div class="relative w-full max-w-lg aspect-square mb-12 group">
+<!-- Background Decorative Elements -->
+<div class="absolute inset-0 bg-electric-lime opacity-5 rounded-full blur-[120px]"></div>
+<!-- Main Illustration Frame -->
+<div class="relative w-full h-full border border-surface-variant bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover opacity-60 mix-blend-screen grayscale contrast-125" data-alt="A techno-organic digital landscape featuring glowing data nodes and emerald electric lime geometric structures floating in an absolute black void. The composition uses high-contrast lighting and sharp, brutalist architecture to represent advanced financial networking and social connectivity in the Egyptian Stock Exchange ecosystem. The mood is powerful, cinematic, and sophisticated, emphasizing modern Egyptian fintech aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq7SWTaGdo2UHYJ9tnR7Z3Z31wCCk9C1HFPGYYKIiznzHOyc6jJhGAOWL9CBzJnlj1vdhIfqxfjSErypdTdtpWZfiTatZ51Ko4gUd74JY7E1FHutGtA4wDpaO7P7KmDfNYcu3tD4Fr7Mkrxp0vYosCUnSZyylcNJCG8x2OAKAzQBL5pZkW6nkgApVWfwEM7xqay_aY6tTZhgAdfadXxTRy3tLbBpInDYrpFbfoS8EaOA3PM7IIUBPOZsCGVfseaeZNoM1ronf82rc"/>
+<!-- Overlay Grid Pattern -->
+<div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#D6FF62 0.5px, transparent 0.5px); background-size: 24px 24px;"></div>
+<!-- Centered Branding Symbol -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-32 h-32 border-4 border-electric-lime flex items-center justify-center bg-absolute-black/80 lime-glow">
+<span class="material-symbols-outlined text-6xl text-electric-lime" style="font-variation-settings: 'FILL' 1;">group</span>
+</div>
+</div>
+</div>
+<!-- Floating Data Chips (Bento Style) -->
+<div class="absolute -top-4 -right-4 bg-dark-grey border border-electric-lime px-4 py-2 flex items-center gap-2">
+<span class="w-2 h-2 bg-electric-lime"></span>
+<span class="text-label-caps font-label-caps text-electric-lime">LIVE FEED</span>
+</div>
+<div class="absolute -bottom-6 -left-6 glass-panel px-6 py-4 flex flex-col items-start text-right">
+<span class="text-label-caps font-label-caps text-on-surface-variant">COMMUNITY</span>
+<span class="text-headline-md font-headline-md text-pure-white">0 نشط</span>
+</div>
+</div>
+<!-- Typography Content -->
+<div class="space-y-6 max-w-2xl">
+<h2 class="text-display-xl-mobile md:text-display-xl font-display-xl text-pure-white leading-tight">
+                    ابدأ بمتابعة الخبراء الماليين
+                </h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-lg mx-auto">
+                    انضم إلى مجتمع المستثمرين المصريين. تابع أفضل المحللين واكتشف استراتيجيات التداول الناجحة في البورصة المصرية لحظة بلحظة.
+                </p>
+</div>
+<!-- Primary Action -->
+<div class="mt-12 w-full max-w-xs">
+<button class="w-full bg-electric-lime text-absolute-black py-5 px-8 font-bold text-headline-md transition-transform hover:scale-95 active:scale-90 flex items-center justify-center gap-4">
+<span>استكشف المحللين</span>
+<span class="material-symbols-outlined">explore</span>
+</button>
+</div>
+<!-- Secondary Context Chips -->
+<div class="mt-16 flex flex-wrap justify-center gap-4">
+<div class="bg-dark-grey px-4 py-2 border-r-2 border-electric-lime flex items-center gap-3">
+<span class="material-symbols-outlined text-electric-lime text-sm">trending_up</span>
+<span class="text-label-caps font-label-caps text-on-surface">أفضل المتداولين</span>
+</div>
+<div class="bg-dark-grey px-4 py-2 border-r-2 border-electric-lime flex items-center gap-3">
+<span class="material-symbols-outlined text-electric-lime text-sm">insights</span>
+<span class="text-label-caps font-label-caps text-on-surface">تحليلات السوق</span>
+</div>
+<div class="bg-dark-grey px-4 py-2 border-r-2 border-electric-lime flex items-center gap-3">
+<span class="material-symbols-outlined text-electric-lime text-sm">hub</span>
+<span class="text-label-caps font-label-caps text-on-surface">غرف التداول</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom NavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex flex-row-reverse justify-around items-center py-2 bg-absolute-black border-t border-surface-variant">
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-caps font-label-caps">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-label-caps font-label-caps">بيانات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-electric-lime font-bold scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-label-caps font-label-caps">مجتمع Stocker</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-label-caps font-label-caps">المحفظة</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-caps font-label-caps">حسابي</span>
+</a>
+</nav>
+</body></html>

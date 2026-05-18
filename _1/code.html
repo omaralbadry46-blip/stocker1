@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&amp;family=JetBrains+Mono:wght@500;600&amp;family=Tajawal:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#c6c6c7",
+                        "on-tertiary": "#313030",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "outline": "#8f937d",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-primary": "#283500",
+                        "tertiary-container": "#e5e2e1",
+                        "surface": "#131313",
+                        "surface-dim": "#131313",
+                        "electric-lime": "#D6FF62",
+                        "surface-variant": "#353535",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-secondary-container": "#b4b5b5",
+                        "surface-bright": "#393939",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-tint": "#aed53c",
+                        "pure-white": "#FFFFFF",
+                        "secondary-container": "#454747",
+                        "surface-container-highest": "#353535",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-primary-fixed": "#161f00",
+                        "on-error": "#690005",
+                        "inverse-surface": "#e2e2e2",
+                        "on-error-container": "#ffdad6",
+                        "background": "#131313",
+                        "absolute-black": "#000000",
+                        "error-container": "#93000a",
+                        "dark-grey": "#1A1A1A",
+                        "on-primary-container": "#556d00",
+                        "primary-fixed-dim": "#aed53c",
+                        "on-background": "#e2e2e2",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "secondary-fixed": "#e2e2e2",
+                        "surface-container": "#1f1f1f",
+                        "success-green": "#2ECC71",
+                        "primary": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "error-red": "#FF3B30",
+                        "surface-container-low": "#1b1b1b",
+                        "tertiary": "#ffffff",
+                        "inverse-primary": "#4f6600",
+                        "primary-container": "#c9f156",
+                        "on-surface": "#e2e2e2",
+                        "inverse-on-surface": "#303030",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-tertiary-container": "#656464",
+                        "on-secondary": "#2f3131",
+                        "on-primary-fixed-variant": "#3b4d00",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "on-surface-variant": "#c5c9b1",
+                        "outline-variant": "#444936",
+                        "primary-fixed": "#c9f156",
+                        "error": "#ffb4ab"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "section-gap": "48px",
+                        "gutter": "24px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Cairo"],
+                        "label-caps": ["jetbrainsMono"],
+                        "display-xl-mobile": ["Cairo"],
+                        "display-xl": ["Cairo"],
+                        "body-md": ["Tajawal"],
+                        "body-lg": ["Tajawal"],
+                        "headline-lg-mobile": ["Cairo"],
+                        "headline-lg": ["Cairo"],
+                        "data-mono": ["jetbrainsMono"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "52px", "fontWeight": "900"}],
+                        "display-xl": ["96px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "800"}],
+                        "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #000000; color: #e2e2e2; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #000000; }
+        ::-webkit-scrollbar-thumb { background: #353535; }
+    </style>
+</head>
+<body class="font-body-md bg-absolute-black">
+<!-- Top AppBar -->
+<header class="bg-absolute-black text-electric-lime docked full-width top-0 border-b border-surface-variant flex flex-row-reverse justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 z-50">
+<div class="text-headline-md font-headline-md font-black text-electric-lime">Stocker</div>
+<div class="flex items-center gap-6">
+<div class="relative group cursor-pointer">
+<span class="material-symbols-outlined text-electric-lime" data-icon="notifications">notifications</span>
+<span class="absolute -top-1 -right-1 bg-error-red w-2 h-2"></span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-electric-lime transition-colors" data-icon="flag">flag</span>
+</div>
+<div class="hidden md:flex flex-grow justify-end px-gutter">
+<div class="relative w-64">
+<input class="w-full bg-transparent border-0 border-b-2 border-pure-white focus:border-electric-lime text-pure-white px-0 py-1 font-body-md focus:ring-0 transition-all" placeholder="بحث عن سهم..." type="text"/>
+</div>
+</div>
+</header>
+<!-- Side NavBar (Desktop) -->
+<aside class="hidden md:flex flex-col fixed right-0 top-0 h-full z-40 py-8 bg-absolute-black border-l border-surface-variant w-64 pt-24">
+<div class="px-margin-mobile mb-8">
+<h2 class="text-headline-md font-headline-md text-electric-lime">EGX Dashboard</h2>
+<p class="text-on-surface-variant text-body-md">البورصة المصرية</p>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-4 text-electric-lime border-r-4 border-electric-lime bg-surface-container-low px-4 py-3 hover:bg-surface-variant transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-body-md">الرئيسية</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-body-md">بيانات</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-body-md">مجتمع Stocker</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-body-md">المحفظة</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-body-md">حسابي</span>
+</a>
+</nav>
+</aside>
+<!-- MAIN CONTENT CANVAS -->
+<main class="md:mr-64 pt-24 pb-20 px-margin-mobile md:px-margin-desktop min-h-screen relative overflow-hidden">
+<!-- Backdrop for Notification Overlay -->
+<div class="fixed inset-0 bg-absolute-black/60 backdrop-blur-sm z-40"></div>
+<!-- Notification Panel (Vertical Drawer Context) -->
+<div class="fixed top-20 left-4 md:left-margin-desktop w-[calc(100%-32px)] md:w-96 max-h-[819px] bg-dark-grey border border-surface-variant z-50 flex flex-col shadow-2xl">
+<!-- Header -->
+<div class="p-4 border-b border-surface-variant flex justify-between items-center bg-surface-container-high">
+<span class="text-label-caps font-label-caps text-electric-lime">الإشعارات الأخيرة</span>
+<button class="text-on-surface-variant hover:text-pure-white">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+</div>
+<!-- List -->
+<div class="overflow-y-auto flex-grow">
+<!-- Notification 1: Price Hit -->
+<div class="p-4 border-b border-surface-variant bg-surface-container-low hover:bg-surface-container transition-colors relative group">
+<div class="absolute right-0 top-0 h-full w-1 bg-electric-lime"></div>
+<div class="flex gap-4 items-start">
+<div class="w-10 h-10 bg-absolute-black border border-electric-lime flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-electric-lime" data-icon="trending_up">trending_up</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<span class="font-headline-md text-body-md text-pure-white">تنبيه سعر: COMI</span>
+<span class="text-label-caps font-label-caps text-on-surface-variant text-[10px]">منذ دقيقتين</span>
+</div>
+<p class="text-body-md text-on-surface-variant leading-tight">تجاوز سهم البنك التجاري الدولي حاجز الـ 85.50 ج.م كما هو محدد في تنبيهاتك.</p>
+<div class="mt-3 flex gap-2">
+<button class="bg-electric-lime text-absolute-black px-4 py-1 text-label-caps font-label-caps hover:opacity-90 transition-opacity">تداول الآن</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification 2: New Post from Analyst -->
+<div class="p-4 border-b border-surface-variant hover:bg-surface-container-low transition-colors group">
+<div class="flex gap-4 items-start">
+<div class="w-10 h-10 bg-dark-grey overflow-hidden border border-surface-variant shrink-0">
+<img alt="Profile" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A professional headshot of a middle-aged Egyptian financial analyst with a focused expression. He is wearing a sharp, tailored charcoal suit and a crisp white shirt against a dark, minimalist architectural background. The lighting is cinematic and high-contrast, emphasizing structural detail and a serious, professional mood suitable for a high-end fintech dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLhX86Yw_5jXn5e9WSkusl1hWU3EnbygU-W3IIqbsG3npV3uGsMDuTZ5bFCEnUBbyzg8aOGyJk2H44Onoc2fO8Pr7PIkmU7fv90ySNXgGxsVN1WJJLtn86S5a_N1ZWurJSbGLwROEAMS0sZ5WfGblLjc_CVc5i464KBxy5JdguFtU-RkcE4pWXb2XbrgGt9b-THMe7vFicsWR999837lw8AGIu_iJ6I1EwBDkD88GlqNG7VOcqjpBKLLxawJNwWrpl30jNkd6rnh8"/>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<span class="font-headline-md text-body-md text-pure-white">د. مصطفى الشامي</span>
+<span class="text-label-caps font-label-caps text-on-surface-variant text-[10px]">منذ ساعة</span>
+</div>
+<p class="text-body-md text-on-surface-variant leading-tight">نشر تحليلاً جديداً حول قطاع العقارات: "توقعات أداء طلعة مصطفى (TMG) في الربع القادم".</p>
+<div class="mt-3">
+<button class="border border-pure-white text-pure-white px-4 py-1 text-label-caps font-label-caps hover:bg-pure-white hover:text-absolute-black transition-all">اقرأ المقال</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Notification 3: Gift Received -->
+<div class="p-4 border-b border-surface-variant bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+<div class="flex gap-4 items-start">
+<div class="w-10 h-10 bg-electric-lime flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-absolute-black" data-icon="card_giftcard">card_giftcard</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-1">
+<span class="font-headline-md text-body-md text-electric-lime">هدية استثمارية!</span>
+<span class="text-label-caps font-label-caps text-on-surface-variant text-[10px]">منذ 4 ساعات</span>
+</div>
+<p class="text-body-md text-on-surface-variant leading-tight">لقد استلمت بطاقة هدايا بقيمة 500 ج.م من "سامح ك." لاستخدامها في شراء صناديق الاستثمار.</p>
+<div class="mt-3">
+<button class="bg-pure-white text-absolute-black px-4 py-1 text-label-caps font-label-caps hover:bg-electric-lime transition-all">استرداد الهدية</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<a class="p-4 text-center bg-surface-container-high border-t border-surface-variant text-label-caps font-label-caps text-on-surface-variant hover:text-electric-lime transition-colors" href="#">
+                عرض جميع التنبيهات
+            </a>
+</div>
+<!-- Dashboard Content Preview (Background) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter opacity-20">
+<div class="md:col-span-8 space-y-gutter">
+<div class="bg-dark-grey h-96 border border-surface-variant p-6">
+<div class="h-4 w-48 bg-surface-variant mb-4"></div>
+<div class="h-full w-full bg-surface-container-low"></div>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="bg-dark-grey h-48 border border-surface-variant"></div>
+<div class="bg-dark-grey h-48 border border-surface-variant"></div>
+</div>
+</div>
+<div class="md:col-span-4 space-y-gutter">
+<div class="bg-dark-grey h-[600px] border border-surface-variant"></div>
+</div>
+</div>
+</main>
+<!-- Bottom NavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex flex-row-reverse justify-around items-center py-2 bg-absolute-black border-t border-surface-variant">
+<div class="flex flex-col items-center justify-center text-electric-lime font-bold scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-label-caps font-label-caps">الرئيسية</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-pure-white transition-all">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="text-label-caps font-label-caps">بيانات</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-pure-white transition-all">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-label-caps font-label-caps">مجتمع</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-pure-white transition-all">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="text-label-caps font-label-caps">المحفظة</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-pure-white transition-all">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-label-caps font-label-caps">حسابي</span>
+</div>
+</nav>
+</body></html>

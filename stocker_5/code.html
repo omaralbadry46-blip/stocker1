@@ -1,0 +1,352 @@
+<!DOCTYPE html><html class="dark" dir="rtl" lang="ar" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&amp;family=Tajawal:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#131313",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "surface-bright": "#393939",
+                    "on-primary": "#283500",
+                    "outline-variant": "#444936",
+                    "on-background": "#e2e2e2",
+                    "primary-fixed-dim": "#aed53c",
+                    "surface": "#131313",
+                    "inverse-on-surface": "#303030",
+                    "on-secondary-container": "#b4b5b5",
+                    "surface-tint": "#aed53c",
+                    "on-error": "#690005",
+                    "on-tertiary-container": "#656464",
+                    "surface-container": "#1f1f1f",
+                    "error": "#ffb4ab",
+                    "on-error-container": "#ffdad6",
+                    "error-container": "#93000a",
+                    "error-red": "#FF3B30",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "secondary": "#c6c6c7",
+                    "on-secondary-fixed-variant": "#454747",
+                    "primary-container": "#c9f156",
+                    "surface-container-highest": "#353535",
+                    "outline": "#8f937d",
+                    "tertiary-fixed": "#e5e2e1",
+                    "background": "#131313",
+                    "on-surface-variant": "#c5c9b1",
+                    "success-green": "#2ECC71",
+                    "absolute-black": "#000000",
+                    "secondary-container": "#454747",
+                    "inverse-surface": "#e2e2e2",
+                    "on-primary-container": "#556d00",
+                    "primary": "#ffffff",
+                    "tertiary": "#ffffff",
+                    "pure-white": "#FFFFFF",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "surface-variant": "#353535",
+                    "on-tertiary": "#313030",
+                    "dark-grey": "#1A1A1A",
+                    "tertiary-container": "#e5e2e1",
+                    "on-primary-fixed": "#161f00",
+                    "inverse-primary": "#4f6600",
+                    "surface-container-high": "#2a2a2a",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-primary-fixed-variant": "#3b4d00",
+                    "on-surface": "#e2e2e2",
+                    "on-secondary": "#2f3131",
+                    "primary-fixed": "#c9f156",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "electric-lime": "#D6FF62",
+                    "surface-container-low": "#1b1b1b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "4px",
+                    "section-gap": "48px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "display-xl-mobile": ["Cairo"],
+                    "display-xl": ["Cairo"],
+                    "headline-md": ["Cairo"],
+                    "body-lg": ["Tajawal"],
+                    "body-md": ["Tajawal"],
+                    "data-mono": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Cairo"],
+                    "headline-lg": ["Cairo"],
+                    "label-caps": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "display-xl-mobile": ["48px", {"lineHeight": "52px", "fontWeight": "900"}],
+                    "display-xl": ["96px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "800"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            user-select: none;
+        }
+        .locked-content-blur {
+            backdrop-filter: blur(12px);
+            background: rgba(0, 0, 0, 0.7);
+        }
+        body {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body class="bg-absolute-black text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-absolute-black border-b border-surface-variant flex flex-row-reverse justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 sticky top-0 z-50">
+<div class="flex items-center gap-6">
+<h1 class="text-headline-md font-headline-md font-black text-electric-lime">Stocker</h1>
+</div>
+<div class="flex-1 max-w-md mx-8 hidden md:block">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute right-3 text-on-surface-variant">search</span>
+<input class="w-full bg-dark-grey border-b-2 border-pure-white focus:border-electric-lime text-on-surface py-2 pr-10 outline-none transition-all font-body-md" placeholder="بحث عن سهم أو محلل..." type="text">
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-electric-lime transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-electric-lime transition-colors">
+<span class="material-symbols-outlined">flag</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden md:flex flex-col fixed right-0 top-0 h-full z-40 py-8 bg-absolute-black border-l border-surface-variant w-64 pt-24">
+<nav class="flex flex-col">
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-body-md">الرئيسية</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md">بيانات</span>
+</a>
+<a class="flex items-center gap-4 text-electric-lime border-r-4 border-electric-lime bg-surface-container-low px-4 py-3 translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-body-md">مجتمع Stocker</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-body-md">المحفظة</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-body-md">حسابي</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:mr-64 pt-6 pb-24 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-3xl mx-auto space-y-6">
+<!-- Feed Header -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-pure-white">مجتمع Stocker</h2>
+<p class="text-on-surface-variant font-body-md mt-1">نبض البورصة المصرية لحظة بلحظة</p>
+</div>
+<button class="bg-electric-lime text-absolute-black px-6 py-2 font-bold flex items-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+<span class="">نشر تحليل</span>
+</button>
+</div>
+<!-- Type A: Standard Post with Chart -->
+<article class="bg-dark-grey border-t border-b border-surface-variant group relative">
+<div class="p-6">
+<div class="flex items-center gap-4 mb-4">
+<img alt="Analyst Profile" class="w-12 h-12 grayscale group-hover:grayscale-0 transition-all border border-surface-variant" data-alt="A professional close-up portrait of a Middle Eastern male financial analyst in a modern office. The lighting is high-contrast, dramatic, and moody, emphasizing sharp features. The background consists of blurred digital stock market trading screens with green and red ticker numbers, maintaining the aggressive techno-organic aesthetic of the platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxeSTNMecKJGN1tkXvFeLbWZvCYWg1DclamscYSzh6-ySGP9-YKBAA74HtVUmgtDxEdEaG0NTnMXU8oqLtcaKy43dbvlBjZ5fRUTTRNe76kCy_ZNSUNktfuLZkT08edC5Y7ygv8yTWK38u3S3YsXMkkWNMgBT0P9FVylx1oLhQFHlP3tXvxCNpiQZ61U8bg1IVfUN0Z0KROuvQv8Qd86j7-_G1fW7j_DRfkkN4eW4iPW1SSD46Y1nGXN7Dc1R0ixGF-YRrQkrlCns">
+<div>
+<p class="font-headline-md text-pure-white text-[18px]">د. مصطفى الشامي</p>
+<p class="text-on-surface-variant font-label-caps text-[10px]">خبير أسواق المال وعضو الجمعية المصرية للأوراق المالية</p>
+</div>
+<div class="mr-auto">
+<span class="bg-dark-grey border border-electric-lime text-electric-lime px-3 py-1 font-label-caps flex items-center gap-1">
+<span class="w-2 h-2 bg-electric-lime inline-block"></span>
+                                COMI.CA
+                            </span>
+</div>
+</div>
+<p class="font-body-lg text-on-surface mb-6">
+                        تحليل لسهم البنك التجاري الدولي: السهم يقترب من منطقة مقاومة تاريخية عند ٨٥.٥٠ ج.م. في حال الاختراق، المستهدف القادم هو ٩٢ ج.م. المؤشرات الفنية تظهر زخماً شرائياً قوياً.
+                    </p>
+<div class="relative w-full aspect-video mb-6 border border-surface-variant overflow-hidden">
+<img alt="Market Chart" class="w-full h-full object-cover" data-alt="A complex financial stock chart displaying green and red candlestick patterns over a dark background. Glowing electric lime trend lines intersect with high-precision grid lines. The image captures a technical analysis session for the Egyptian Exchange, with Egyptian Pound currency symbols visible in the margin. The style is aggressive, high-octane, and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChck979LWB9rh6JS3PRiR2Hgg8DTQFt0EGiAZh_KisKEvMxgm_Zm4eKXBEZcudZEHrD01i2RJVzGs00JjWD71SybzoHcCC5elJmQjoZxWVABKFseQm4aWEg5vkz5wcRmAZ3ms37SqsbJn76az9erIA9xL8tDL4-ow8e0z5Z-YkVrdT1PbKPD22ZeKYpXTrZIfy9sEfY3aqpNk5pHqmBOnrYorOu8lKtNFGyn9JDqG43YLTz-2mO0js2Cel5k0Iwntfwxb-U6fBjX8">
+<div class="absolute top-4 right-4 bg-success-green/20 text-success-green border border-success-green px-4 py-1 font-label-caps">
+                            BULLISH / شرائي
+                        </div>
+</div>
+<div class="flex items-center justify-between border-t border-surface-variant pt-4">
+<div class="flex gap-6">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-electric-lime">
+<span class="material-symbols-outlined">thumb_up</span>
+<span class="font-data-mono">١٢٤</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-electric-lime">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-data-mono">٢٨</span>
+</button>
+</div>
+<div class="flex gap-2">
+<button class="bg-dark-grey text-electric-lime border border-electric-lime px-4 py-2 hover:bg-electric-lime hover:text-absolute-black transition-all">
+<span class="material-symbols-outlined">card_giftcard</span>
+</button>
+<button class="bg-electric-lime text-absolute-black font-bold px-8 py-2 hover:opacity-90">
+                                شراء السهم
+                            </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Type B: Sponsored Post -->
+<article class="bg-dark-grey border-2 border-electric-lime group relative">
+<div class="p-6">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-electric-lime flex items-center justify-center"><span class="material-symbols-outlined text-absolute-black text-3xl">domain</span></div>
+<div>
+<p class="font-headline-md text-electric-lime text-[18px]">بريميم العقارية</p>
+<p class="text-on-surface-variant font-label-caps text-[10px]">شريك تعليمي</p>
+</div>
+</div>
+<span class="bg-electric-lime text-absolute-black px-2 py-0.5 font-label-caps text-[10px]">إعلان / ممول</span>
+</div>
+<div class="flex flex-col md:flex-row gap-6 items-center">
+<div class="flex-1">
+<h3 class="text-headline-md text-pure-white mb-2">استثمارك العقاري الأمثل</h3>
+<p class="font-body-md text-on-surface-variant mb-6">استكشف فرص الاستثمار في أرقى المجمعات السكنية في العاصمة الإدارية الجديدة. عوائد استثمارية مضمونة وتصاميم عالمية.</p>
+<button class="bg-electric-lime text-absolute-black font-bold px-10 py-3 w-full md:w-auto">اكتشف المزيد</button>
+</div>
+<div class="w-full md:w-1/3 aspect-square border border-surface-variant">
+<img alt="Premium Real Estate Investment" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" data-alt="A futuristic classroom setting for stock market education. A large holographic data dashboard projects green and white graphs into a dimly lit, dark grey room. Modern minimalist desks and equipment are visible. The atmosphere is intense, technical, and high-performance, reflecting the Stocker brand identity of professional reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhu7W45MvgS_h90MJxZYEmctKhC9sflhaXPZHmUXqeN5wFAlG07Kcob0fHLf5oZJqNVM8JQ9n65EpAjQot--YbUOXg0kH8TgJs9oPgfk9h7I2WpbrrsrOXjXvdYIv3STp4cd3LrAyO77LxOmT2Pp1-Ejy0OHmJ20fgRGMZLH5deMFpbdndLuEkzc3Vc7ay2eqqFnJjE7Rlr1wMwnTBxXZGbQcjDi3aAvICy0NiNv_9GDWK62dfBg261hYWyjWds4QJ5vmgJhJNLl4">
+</div>
+</div>
+</div>
+</article>
+<!-- Type C: Locked Post -->
+<article class="bg-dark-grey border border-surface-variant relative overflow-hidden group"><div class="p-6 pb-0 relative z-10">
+<div class="flex items-center gap-4 mb-4">
+<img alt="Analyst Profile" class="w-12 h-12 grayscale group-hover:grayscale-0 transition-all border border-surface-variant object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uj7QQthOhcrIsqCP9TrxAYRpn5Cn-zmB3GT7AYU86dkjzpMiX9opAtpJP2zQdC3Er-lR8Wul_PTLC51uBLvpu47HGknKpN_kakjgPUycpKDEFzOoVciGxQI4CCUsfDSMv9svLsDXt0MUpd85tsYPKx-rzVXG9w8KoRE6NajYSDzfoDS7vXen79PtOWLhZgqqHGbggFa6vMXxAv2u6OpX5HNY-dGO6aIFXU580u73A6kqe4RWqAGFLnvu78">
+<div>
+<p class="font-headline-md text-pure-white text-[18px]">ء. مصطفى الشامى</p>
+<p class="text-on-surface-variant font-label-caps text-[10px]">ئبىر أسواق المال وعضو الآمعىة المصرىة للأوراق المالىة</p>
+</div>
+</div>
+</div>
+<div class="p-6 opacity-40 grayscale pointer-events-none">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-surface-variant"></div>
+<div class="space-y-2">
+<div class="w-32 h-4 bg-surface-variant"></div>
+<div class="w-20 h-2 bg-surface-variant"></div>
+</div>
+</div>
+<div class="space-y-2 mb-6">
+<div class="w-full h-4 bg-surface-variant"></div>
+<div class="w-3/4 h-4 bg-surface-variant"></div>
+</div>
+<div class="w-full aspect-video bg-surface-variant"></div>
+</div>
+<!-- Lock Overlay -->
+<div class="absolute inset-0 flex flex-col items-center justify-center locked-content-blur p-8 text-center">
+<div class="w-16 h-16 bg-electric-lime flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-absolute-black text-4xl" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<h3 class="text-headline-md text-pure-white mb-2">تحليل النخبة: رؤية استثمارية لعام ٢٠٢٤</h3>
+<p class="text-on-surface-variant font-body-md mb-8 max-w-sm">
+                        هذا المحتوى مخصص لمشتركي "Stocker Premium". اكتشف الفرص الخفية في قطاع العقارات قبل الجميع.
+                    </p>
+<div class="space-y-4 w-full max-w-xs">
+<p class="text-electric-lime font-display-xl-mobile text-[24px]">١٤٩ ج.م / شهرياً</p>
+<button class="w-full bg-electric-lime text-absolute-black font-bold py-4 px-6 hover:opacity-90 transition-opacity">
+                            اشترك في الباقة المميزة لفتح هذا التحليل
+                        </button>
+</div>
+</div>
+</article>
+<!-- Leaderboard (Asymmetric Layout) -->
+<section class="mt-12">
+<div class="flex items-center gap-4 mb-6">
+<h3 class="text-headline-md text-pure-white">المحللون الأكثر تفاعلاً</h3>
+<div class="h-px flex-1 bg-surface-variant"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-dark-grey p-4 border-r-4 border-electric-lime flex items-center gap-4">
+<span class="font-display-xl text-[48px] text-electric-lime leading-none">01</span>
+<div class="flex-1">
+<p class="font-bold text-pure-white">كريم صادق</p>
+<p class="text-on-surface-variant font-label-caps text-[10px]">+٨٤٪ دقة التوقعات</p>
+</div>
+<button class="bg-surface-variant text-pure-white px-4 py-1 text-sm">متابعة</button>
+</div>
+<div class="bg-dark-grey p-4 border-r-4 border-surface-variant flex items-center gap-4">
+<span class="font-display-xl text-[48px] text-on-surface-variant leading-none opacity-50">02</span>
+<div class="flex-1">
+<p class="font-bold text-pure-white">سارة المهدي</p>
+<p class="text-on-surface-variant font-label-caps text-[10px]">+٧٢٪ دقة التوقعات</p>
+</div>
+<button class="bg-surface-variant text-pure-white px-4 py-1 text-sm">متابعة</button>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex flex-row-reverse justify-around items-center py-2 bg-absolute-black border-t border-surface-variant">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-pure-white transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-caps font-label-caps">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-pure-white transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-label-caps font-label-caps">بيانات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-electric-lime font-bold scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-label-caps font-label-caps">مجتمع Stocker</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-pure-white transition-all" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-label-caps font-label-caps">المحفظة</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-pure-white transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-caps font-label-caps">حسابي</span>
+</a>
+</nav>
+<!-- Contextual FAB -->
+<button class="fixed bottom-24 left-6 md:bottom-12 md:left-margin-desktop w-16 h-16 bg-electric-lime text-absolute-black flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-40">
+<span class="material-symbols-outlined text-3xl">edit</span>
+</button>
+
+
+
+
+</body></html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&amp;family=Tajawal:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#e2e2e2",
+                        "on-primary-fixed-variant": "#3b4d00",
+                        "primary-fixed-dim": "#aed53c",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "inverse-primary": "#4f6600",
+                        "inverse-on-surface": "#303030",
+                        "primary": "#ffffff",
+                        "on-tertiary": "#313030",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "error": "#ffb4ab",
+                        "primary-container": "#c9f156",
+                        "tertiary": "#ffffff",
+                        "on-primary-container": "#556d00",
+                        "surface-container": "#1f1f1f",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "error-container": "#93000a",
+                        "surface-container-highest": "#353535",
+                        "secondary": "#c6c6c7",
+                        "surface-container-low": "#1b1b1b",
+                        "on-error-container": "#ffdad6",
+                        "surface-dim": "#131313",
+                        "on-primary-fixed": "#161f00",
+                        "primary-fixed": "#c9f156",
+                        "dark-grey": "#1A1A1A",
+                        "surface-tint": "#aed53c",
+                        "success-green": "#2ECC71",
+                        "on-secondary-container": "#b4b5b5",
+                        "electric-lime": "#D6FF62",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "error-red": "#FF3B30",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "surface-bright": "#393939",
+                        "background": "#131313",
+                        "surface-variant": "#353535",
+                        "secondary-container": "#454747",
+                        "on-tertiary-container": "#656464",
+                        "outline-variant": "#444936",
+                        "absolute-black": "#000000",
+                        "inverse-surface": "#e2e2e2",
+                        "tertiary-fixed": "#e5e2e1",
+                        "pure-white": "#FFFFFF",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-surface-variant": "#c5c9b1",
+                        "on-secondary-fixed-variant": "#454747",
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "outline": "#8f937d",
+                        "on-background": "#e2e2e2",
+                        "tertiary-container": "#e5e2e1",
+                        "on-error": "#690005",
+                        "surface": "#131313",
+                        "on-secondary": "#2f3131",
+                        "on-primary": "#283500"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "section-gap": "48px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Cairo"],
+                        "display-xl": ["Cairo"],
+                        "display-xl-mobile": ["Cairo"],
+                        "headline-lg-mobile": ["Cairo"],
+                        "headline-lg": ["Cairo"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-lg": ["Tajawal"],
+                        "data-mono": ["JetBrains Mono"],
+                        "body-md": ["Tajawal"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "display-xl": ["96px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "display-xl-mobile": ["48px", {"lineHeight": "52px", "fontWeight": "900"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "800"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                        "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-lime-glow {
+            box-shadow: 0 0 15px rgba(214, 255, 98, 0.2);
+        }
+        body {
+            background-color: #000000;
+            color: #e2e2e2;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353535;
+        }
+        .pulse-lime {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .4; }
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- Top AppBar -->
+<header class="fixed top-0 right-0 left-0 z-50 bg-absolute-black border-b border-surface-variant flex flex-row-reverse justify-between items-center w-full px-4 md:px-margin-desktop py-4">
+<div class="flex items-center gap-4">
+<span class="font-headline-lg text-headline-lg font-black text-electric-lime tracking-tighter">ثروة</span>
+</div>
+<div class="hidden md:flex flex-row-reverse items-center gap-8">
+<div class="relative group">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-electric-lime transition-colors">search</span>
+<input class="bg-surface-container-low border-b-2 border-pure-white focus:border-electric-lime focus:ring-0 text-on-surface pr-10 pl-4 py-2 w-64 transition-all" placeholder="بحث عن دوائر..." type="text"/>
+</div>
+<div class="flex flex-row-reverse gap-4">
+<span class="material-symbols-outlined p-2 hover:bg-surface-container text-on-surface-variant cursor-pointer transition-colors relative">
+                    forum
+                    <span class="absolute top-1 right-1 w-2 h-2 bg-electric-lime rounded-full"></span>
+</span>
+<span class="material-symbols-outlined p-2 hover:bg-surface-container text-on-surface-variant cursor-pointer transition-colors">notifications</span>
+<span class="material-symbols-outlined p-2 hover:bg-surface-container text-on-surface-variant cursor-pointer transition-colors">settings</span>
+</div>
+<div class="h-10 w-10 bg-surface-variant overflow-hidden border border-electric-lime">
+<img alt="User profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQc2lji0GDjDtzjSr3-k8YUM_5LvH37WFx5h6TxTamXjfbloRlAav_lBsEha-1pOAQkZZ5x_ei0d-80oTRsclkqbR6ZxPq3HNYH46LwEzf8nCoywDCAU5xuI3X_r4EqtTwczPoRr5hB4TqV6TiU4zXi_1tAGqIx48rcSEEncrG3eQCM_um7ZTJFUHisOftHFv4zkNhyiarf-yF-YJy3yF50svr2Uzzk_f5t_PW24HRSd-3ogZIXZl9K2Q2vI86eK9E1jPX2rch8Tg"/>
+</div>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-electric-lime text-3xl">menu</span>
+</div>
+</header>
+<!-- Side Navigation Bar -->
+<aside class="fixed right-0 top-0 h-full hidden md:flex flex-col z-40 bg-absolute-black border-l border-surface-variant w-64 pt-24">
+<div class="px-6 mb-8">
+<div class="flex flex-row-reverse items-center gap-3">
+<div class="w-12 h-12 bg-surface-container-high flex items-center justify-center border-2 border-electric-lime">
+<span class="material-symbols-outlined text-electric-lime">groups</span>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md leading-none text-white">المستثمر المحترف</h3>
+<p class="font-label-caps text-label-caps text-on-surface-variant">عضوية بلاتينية</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="text-on-surface-variant flex flex-row-reverse items-center gap-4 p-4 hover:bg-surface-container-high hover:text-white transition-all scale-100 active:scale-95" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-caps text-label-caps">نظرة عامة</span>
+</a>
+<a class="bg-electric-lime text-absolute-black font-bold flex flex-row-reverse items-center gap-4 p-4 transition-all scale-100 active:scale-95" href="#">
+<span class="material-symbols-outlined">diversity_3</span>
+<span class="font-label-caps text-label-caps">دوائر الاستثمار</span>
+</a>
+<a class="text-on-surface-variant flex flex-row-reverse items-center gap-4 p-4 hover:bg-surface-container-high hover:text-white transition-all scale-100 active:scale-95" href="#">
+<span class="material-symbols-outlined">monitoring</span>
+<span class="font-label-caps text-label-caps">السوق الجماعي</span>
+</a>
+<a class="text-on-surface-variant flex flex-row-reverse items-center gap-4 p-4 hover:bg-surface-container-high hover:text-white transition-all scale-100 active:scale-95" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-label-caps text-label-caps">تقارير المجموعة</span>
+</a>
+<a class="text-on-surface-variant flex flex-row-reverse items-center gap-4 p-4 hover:bg-surface-container-high hover:text-white transition-all scale-100 active:scale-95" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps">الإعدادات</span>
+</a>
+</nav>
+<div class="p-4 space-y-2 bg-surface-container-low">
+<button class="w-full py-3 bg-electric-lime text-absolute-black font-bold font-label-caps text-[11px] hover:bg-white transition-all">
+                إنشاء دائرة جديدة
+            </button>
+<button class="w-full py-3 bg-transparent border border-electric-lime text-electric-lime font-bold font-label-caps text-[11px] hover:bg-electric-lime hover:text-absolute-black transition-all">
+                انضمام عبر رابط
+            </button>
+</div>
+<div class="mt-auto border-t border-surface-variant">
+<a class="text-on-surface-variant flex flex-row-reverse items-center gap-4 p-4 hover:bg-error-container hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-label-caps text-label-caps">المساعدة</span>
+</a>
+<a class="text-on-surface-variant flex flex-row-reverse items-center gap-4 p-4 hover:bg-error-container hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-caps text-label-caps">تسجيل الخروج</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:mr-64 pt-24 pb-20 md:pb-8 px-4 md:px-margin-desktop min-h-screen">
+<!-- Page Header -->
+<header class="flex flex-col md:flex-row-reverse justify-between items-start md:items-center gap-6 mb-12">
+<div>
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-white mb-2">دوائر الاستثمار الخاصة</h1>
+<p class="text-on-surface-variant flex items-center gap-2 flex-row-reverse">
+<span class="material-symbols-outlined text-sm">lock_person</span>
+                    استثمر مع مجموعتك المختارة بخصوصية تامة وتشفير عسكري
+                </p>
+</div>
+<div class="flex flex-row-reverse gap-4 w-full md:w-auto">
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 bg-electric-lime text-absolute-black font-black px-6 py-3 font-label-caps text-label-caps hover:bg-white transition-all">
+<span class="material-symbols-outlined">add_circle</span>
+                    إنشاء دائرة استثمار
+                </button>
+</div>
+</header>
+<!-- Bento Grid: Stats & Discussions -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter mb-section-gap">
+<!-- Summary Stats -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<div class="bg-dark-grey p-6 flex flex-col justify-between border-r-4 border-electric-lime">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4">قيمة استثمارات المجموعات</span>
+<div class="flex items-baseline gap-2 flex-row-reverse">
+<span class="font-display-xl-mobile md:text-headline-lg font-black text-white">4,280,000</span>
+<span class="text-electric-lime font-bold">ج.م</span>
+</div>
+<div class="mt-4 flex items-center gap-2 text-success-green flex-row-reverse">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="font-data-mono text-data-mono">+12.4% عائد تراكمي</span>
+</div>
+</div>
+<!-- Mini Social Component -->
+<div class="bg-dark-grey p-6 border-r-4 border-pure-white">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4">نشاط المجموعات</span>
+<div class="flex flex-row-reverse justify-between items-center">
+<div class="flex -space-x-reverse space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-dark-grey bg-surface-variant overflow-hidden">
+<img alt="avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsuk6tuzCdqVT26iNjuBPrZrA2RzCnbVvbT_pPjzUj_glEGeED40ewQzKUE2JRE4CyKmdSlbrbXyiu8dgcNM63JE46ZZjW27VaRXj3xDN0we_oT9ezzbs9dr3EiVQPiPp-Q09mT7sOMLiWusV2H8bV7liEEMC-dADbXIPKR3KWmN__5a3GHxMyoaLUUtbnZgUDgbwCXxvTImcYJexT8mVyq_wGdqIxIGRDVLWp2HOFFqB1vLTFeDLie1L4AQVx9o6ZElbkHwkGcZU"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-dark-grey bg-surface-variant overflow-hidden">
+<img alt="avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdd7JBFhw8X4YPoYYMNxpuCV2885W8ljNUdsQ9r8b57iC_LZnHlf4m6xmb5Bamz6wtwBfEMW3bA94gg6fXLZ_v-pT3U6zIm-3to1YmBEs_Nw8Sy4MR3VfA-gfMnz8mnH2_VqbQsjPJRSEDnMjocR6ZZjIgFhY2XOA4HmqkvGZslopZDzApzrgHqJnt8PdETnMmxoV3feTLP9UdeBRzOUOptNiROsVY2sOe92TP_FVIpEmhiElaUwnGmgVybHbDyCTr-nsJJDhJ9jA"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-dark-grey bg-surface-variant overflow-hidden">
+<img alt="avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBw72a_KVFM3l5b7tpyOknsyYT-9QVWc0eB8ZzysgOPHJn_HOOwx_gujFUM_2IjM3FUmUmiDUgU5s25MvnOipqlUdNj9J1LK9ijGD5rfkgVKTBCMmgTX3eKi0mikBD8qAKQ4mMw8D3akncsOw9l9BTRjVNpbLM320k5Zrnfyfn8hVvcYvnJwEq057ZrjWT759wpOBLa56G6nhcC_d6hFTMpXvTm9VCVklCGjwxC6DZrUtKAGOnqa3y7WnP_3hiLiWTX_qyFNSJpjw"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-dark-grey bg-surface-container flex items-center justify-center text-[10px] font-bold">
+                                +24
+                            </div>
+</div>
+<span class="font-body-md text-white">34 عضو نشط الآن</span>
+</div>
+</div>
+</div>
+<!-- Ongoing Discussions Sidebar/Element -->
+<div class="lg:col-span-8 bg-dark-grey border border-surface-variant flex flex-col">
+<div class="p-6 border-b border-surface-variant flex flex-row-reverse justify-between items-center bg-surface-container-lowest">
+<div class="flex items-center gap-3 flex-row-reverse">
+<span class="material-symbols-outlined text-electric-lime">forum</span>
+<h3 class="font-headline-md text-headline-md text-white">مناقشات نشطة</h3>
+</div>
+<span class="px-3 py-1 bg-electric-lime text-absolute-black font-label-caps text-[10px] font-bold pulse-lime">مباشر</span>
+</div>
+<div class="flex-1 p-6 space-y-6 max-h-[350px] overflow-y-auto">
+<!-- Message 1 -->
+<div class="flex flex-row-reverse items-start gap-4">
+<div class="w-10 h-10 bg-surface-container border border-electric-lime flex-shrink-0 flex items-center justify-center overflow-hidden">
+<img alt="avatar" class="w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2PGmHj9TwAprmNDd_rtSF9b2MxffcYVPnl5jm_zmmA-HZZy4vb9FNawBs4VzUH9QzYRQiMNOVg4dkS5ApYoOs-3h10gQ8PkqRPu3v7cXPLl-vhpQn4Adz4HFAULx3wcYfgOAALMBT2UyHY7VGZi0SjugCSSSTinw4iJSiOV5bFRN61T-VvZRBmWFjmE58y8h9tUOylbDeSIBd7vEwumK8kswU1V3Kg2XRGTDnYYEqs_Av8cYIHESHbpkk33tGUVBN4jNN8Vb-fl0"/>
+</div>
+<div class="bg-surface-container-low p-4 border border-surface-variant flex-1">
+<div class="flex flex-row-reverse justify-between items-center mb-2">
+<span class="font-bold text-electric-lime">أحمد (دائرة التقاعد)</span>
+<span class="text-[10px] text-on-surface-variant">منذ ٢ دقيقة</span>
+</div>
+<p class="text-on-surface text-sm">"هل رأيتم أداء سهم هيرميس اليوم؟ أعتقد أنه الوقت المناسب للشراء الجماعي."</p>
+</div>
+</div>
+<!-- Message 2 -->
+<div class="flex flex-row-reverse items-start gap-4">
+<div class="w-10 h-10 bg-surface-container border border-pure-white flex-shrink-0 flex items-center justify-center overflow-hidden">
+<img alt="avatar" class="w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMD4yQussEWd6k_VNkPLxZnpdg9EmTVZs0knjXvWk5Qp0N-HKrM9MfYoLkSxCS1OpJ_Dkpx790IoVCbdDYxVEAO9FS_KwdXcoGQidRHjZ7iN08v52KlThD--qh_qiWl_Ny38wJWt6rk2KzuX2ECb5RQ06F7lLNciKdEAKo5OI5VncVfuvgczf43jhNHujMGPK4nFqlP8ixyjXdng8y1dZr7BB_XIFxJuX1UV7LgrNwEVq9lr25V8Z_qeprR0f-aUwb-isnjiuM3x8"/>
+</div>
+<div class="bg-surface-container-low p-4 border border-surface-variant flex-1">
+<div class="flex flex-row-reverse justify-between items-center mb-2">
+<span class="font-bold text-white">سارة (مشاريع تقنية)</span>
+<span class="text-[10px] text-on-surface-variant">منذ ٥ دقائق</span>
+</div>
+<div class="flex items-center gap-2 bg-success-green/10 text-success-green p-2 border-r-2 border-success-green mb-2">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span class="font-label-caps text-[11px]">إشارة تداول: شراء "فوري"</span>
+</div>
+<p class="text-on-surface text-sm">تم تنفيذ الصفقة لجميع أعضاء المجموعة بنجاح.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolios/Circles Grid -->
+<section class="mb-section-gap">
+<div class="flex flex-row-reverse justify-between items-center mb-8 border-b border-surface-variant pb-4">
+<h2 class="font-headline-md text-headline-md text-white">دوائر الاستثمار النشطة</h2>
+<span class="font-label-caps text-label-caps text-on-surface-variant">٣ مجموعات مفعلة</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-dark-grey border border-surface-variant group hover:border-electric-lime transition-all">
+<div class="p-6">
+<div class="flex flex-row-reverse justify-between items-start mb-6">
+<div class="flex items-center gap-3 flex-row-reverse">
+<span class="material-symbols-outlined text-electric-lime p-2 bg-surface-container">hub</span>
+<div>
+<h4 class="font-headline-md text-headline-md text-white group-hover:text-electric-lime transition-colors">صندوق التقاعد</h4>
+<div class="flex items-center gap-2 flex-row-reverse text-on-surface-variant">
+<span class="material-symbols-outlined text-xs">group</span>
+<p class="font-label-caps text-[10px]">١٢ عضو</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="bg-surface-container px-2 py-1 flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-electric-lime rounded-full pulse-lime"></span>
+<span class="font-label-caps text-[10px] text-white">محادثة نشطة</span>
+</div>
+</div>
+</div>
+<div class="space-y-3 mb-8">
+<div class="flex flex-row-reverse justify-between items-center">
+<span class="font-body-md text-on-surface-variant">قيمة المحفظة</span>
+<span class="font-headline-md text-headline-md text-white">2,150,000 ج.م</span>
+</div>
+<div class="flex flex-row-reverse justify-between items-center">
+<span class="font-body-md text-on-surface-variant">الأداء</span>
+<span class="font-data-mono text-data-mono text-success-green flex items-center gap-1 flex-row-reverse">
+<span class="material-symbols-outlined text-sm">arrow_upward</span>
+                                    +1.2%
+                                </span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-3 bg-surface-container-high text-white font-bold font-label-caps text-[10px] hover:bg-electric-lime hover:text-absolute-black transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+                                فتح الدائرة
+                            </button>
+<button class="py-3 border border-surface-variant text-on-surface-variant font-bold font-label-caps text-[10px] hover:text-white transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+                                رابط الدعوة
+                            </button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-dark-grey border border-surface-variant group hover:border-electric-lime transition-all">
+<div class="p-6">
+<div class="flex flex-row-reverse justify-between items-start mb-6">
+<div class="flex items-center gap-3 flex-row-reverse">
+<span class="material-symbols-outlined text-electric-lime p-2 bg-surface-container">diversity_1</span>
+<div>
+<h4 class="font-headline-md text-headline-md text-white group-hover:text-electric-lime transition-colors">مدخرات العائلة</h4>
+<div class="flex items-center gap-2 flex-row-reverse text-on-surface-variant">
+<span class="material-symbols-outlined text-xs">group</span>
+<p class="font-label-caps text-[10px]">٥ أعضاء</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container px-2 py-1">
+<span class="font-label-caps text-[10px] text-on-surface-variant">لا توجد رسائل</span>
+</div>
+</div>
+<div class="space-y-3 mb-8">
+<div class="flex flex-row-reverse justify-between items-center">
+<span class="font-body-md text-on-surface-variant">قيمة المحفظة</span>
+<span class="font-headline-md text-headline-md text-white">850,000 ج.م</span>
+</div>
+<div class="flex flex-row-reverse justify-between items-center">
+<span class="font-body-md text-on-surface-variant">الأداء</span>
+<span class="font-data-mono text-data-mono text-error-red flex items-center gap-1 flex-row-reverse">
+<span class="material-symbols-outlined text-sm">arrow_downward</span>
+                                    -0.4%
+                                </span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-3 bg-surface-container-high text-white font-bold font-label-caps text-[10px] hover:bg-electric-lime hover:text-absolute-black transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+                                فتح الدائرة
+                            </button>
+<button class="py-3 border border-surface-variant text-on-surface-variant font-bold font-label-caps text-[10px] hover:text-white transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+                                رابط الدعوة
+                            </button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-dark-grey border border-surface-variant group hover:border-electric-lime transition-all">
+<div class="p-6">
+<div class="flex flex-row-reverse justify-between items-start mb-6">
+<div class="flex items-center gap-3 flex-row-reverse">
+<span class="material-symbols-outlined text-electric-lime p-2 bg-surface-container">rocket_launch</span>
+<div>
+<h4 class="font-headline-md text-headline-md text-white group-hover:text-electric-lime transition-colors">مشاريع تقنية</h4>
+<div class="flex items-center gap-2 flex-row-reverse text-on-surface-variant">
+<span class="material-symbols-outlined text-xs">group</span>
+<p class="font-label-caps text-[10px]">٤٢ عضو</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container px-2 py-1 flex items-center gap-1">
+<span class="w-1.5 h-1.5 bg-electric-lime rounded-full pulse-lime"></span>
+<span class="font-label-caps text-[10px] text-white">٨ محادثات</span>
+</div>
+</div>
+<div class="space-y-3 mb-8">
+<div class="flex flex-row-reverse justify-between items-center">
+<span class="font-body-md text-on-surface-variant">قيمة المحفظة</span>
+<span class="font-headline-md text-headline-md text-white">1,280,000 ج.م</span>
+</div>
+<div class="flex flex-row-reverse justify-between items-center">
+<span class="font-body-md text-on-surface-variant">الأداء</span>
+<span class="font-data-mono text-data-mono text-success-green flex items-center gap-1 flex-row-reverse">
+<span class="material-symbols-outlined text-sm">arrow_upward</span>
+                                    +5.8%
+                                </span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-3 bg-surface-container-high text-white font-bold font-label-caps text-[10px] hover:bg-electric-lime hover:text-absolute-black transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">open_in_new</span>
+                                فتح الدائرة
+                            </button>
+<button class="py-3 border border-surface-variant text-on-surface-variant font-bold font-label-caps text-[10px] hover:text-white transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+                                رابط الدعوة
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Banner -->
+<footer class="mt-section-gap">
+<div class="bg-electric-lime p-4 border border-absolute-black flex flex-row-reverse items-center justify-center gap-4 text-absolute-black font-bold text-center">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+<p class="font-body-lg text-body-lg">
+                    جميع الدوائر الخاصة مشفرة تماماً ومخفية عن مجتمع Stocker العام. خصوصيتك هي أولويتنا القصوى.
+                </p>
+</div>
+<div class="mt-8 flex flex-col md:flex-row-reverse justify-between items-center gap-4 opacity-50">
+<div class="flex flex-row-reverse gap-6 font-label-caps text-label-caps">
+<a class="hover:text-electric-lime" href="#">شروط الاستخدام</a>
+<a class="hover:text-electric-lime" href="#">سياسة الخصوصية</a>
+<a class="hover:text-electric-lime" href="#">اتفاقية التشفير</a>
+</div>
+<p class="font-label-caps text-label-caps">© 2024 ثروة للاستثمار - جميع الحقوق محفوظة</p>
+</div>
+</footer>
+</main>
+<!-- Bottom Navigation Bar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex flex-row-reverse justify-around items-center h-16 bg-absolute-black border-t border-surface-variant z-50">
+<a class="flex flex-col items-center justify-center text-on-surface-variant pt-2 pb-1" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-caps text-[10px]">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center text-electric-lime pt-2 pb-1 border-t-4 border-electric-lime" href="#">
+<span class="material-symbols-outlined">diversity_3</span>
+<span class="font-label-caps text-[10px]">الدوائر</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant pt-2 pb-1" href="#">
+<span class="material-symbols-outlined">forum</span>
+<span class="font-label-caps text-[10px]">الدردشات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant pt-2 pb-1" href="#">
+<span class="material-symbols-outlined">menu</span>
+<span class="font-label-caps text-[10px]">المزيد</span>
+</a>
+</nav>
+</body></html>

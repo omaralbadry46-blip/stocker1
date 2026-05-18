@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&amp;family=Tajawal:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Use the provided Tailwind configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#93000a",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container-low": "#1b1b1b",
+                    "surface-bright": "#393939",
+                    "inverse-on-surface": "#303030",
+                    "secondary-fixed": "#e2e2e2",
+                    "on-surface-variant": "#c5c9b1",
+                    "absolute-black": "#000000",
+                    "surface-container-highest": "#353535",
+                    "secondary": "#c6c6c7",
+                    "on-primary": "#283500",
+                    "on-secondary-container": "#b4b5b5",
+                    "surface": "#131313",
+                    "success-green": "#2ECC71",
+                    "secondary-container": "#454747",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "on-tertiary": "#313030",
+                    "background": "#131313",
+                    "surface-dim": "#131313",
+                    "primary-fixed": "#c9f156",
+                    "on-error": "#690005",
+                    "outline-variant": "#444936",
+                    "surface-variant": "#353535",
+                    "primary": "#ffffff",
+                    "on-surface": "#e2e2e2",
+                    "inverse-surface": "#e2e2e2",
+                    "inverse-primary": "#4f6600",
+                    "primary-fixed-dim": "#aed53c",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "primary-container": "#c9f156",
+                    "tertiary-container": "#e5e2e1",
+                    "tertiary-fixed": "#e5e2e1",
+                    "surface-container-high": "#2a2a2a",
+                    "tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#3b4d00",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-secondary-fixed-variant": "#454747",
+                    "error-red": "#FF3B30",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "on-error-container": "#ffdad6",
+                    "pure-white": "#FFFFFF",
+                    "on-primary-fixed": "#161f00",
+                    "electric-lime": "#D6FF62",
+                    "on-primary-container": "#556d00",
+                    "on-background": "#e2e2e2",
+                    "error": "#ffb4ab",
+                    "surface-container": "#1f1f1f",
+                    "on-tertiary-container": "#656464",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "on-secondary": "#2f3131",
+                    "dark-grey": "#1A1A1A",
+                    "outline": "#8f937d",
+                    "surface-tint": "#aed53c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-mobile": "16px",
+                    "gutter": "24px",
+                    "section-gap": "48px",
+                    "margin-desktop": "64px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "label-caps": ["JetBrains Mono"],
+                    "body-lg": ["Tajawal"],
+                    "headline-lg-mobile": ["Cairo"],
+                    "display-xl-mobile": ["Cairo"],
+                    "body-md": ["Tajawal"],
+                    "headline-lg": ["Cairo"],
+                    "data-mono": ["JetBrains Mono"],
+                    "headline-md": ["Cairo"],
+                    "display-xl": ["Cairo"]
+            },
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body {
+            background-color: #000000;
+            color: #e2e2e2;
+        }
+    </style>
+</head>
+<body class="bg-absolute-black font-body-md overflow-hidden h-screen flex">
+<!-- SideNavBar (Desktop) -->
+<aside class="hidden md:flex flex-col fixed right-0 top-0 h-full z-40 py-8 bg-absolute-black border-l border-surface-variant w-64">
+<div class="px-margin-mobile mb-12">
+<h1 class="text-headline-md font-headline-md text-electric-lime">Stocker</h1>
+<p class="text-label-caps font-label-caps text-on-surface-variant">Egyptian Exchange</p>
+</div>
+<nav class="flex flex-col flex-1">
+<!-- Home -->
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-body-md text-body-md">الرئيسية</span>
+</a>
+<!-- Data -->
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="font-body-md text-body-md">بيانات</span>
+</a>
+<!-- Community (Active) -->
+<a class="flex items-center gap-4 text-electric-lime border-r-4 border-electric-lime bg-surface-container-low px-4 py-3 translate-x-1 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-body-md text-body-md">مجتمع Stocker</span>
+</a>
+<!-- Wallet -->
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="font-body-md text-body-md">المحفظة</span>
+</a>
+<!-- Profile -->
+<a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-pure-white transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-body-md text-body-md">حسابي</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area (Social Feed Background) -->
+<main class="flex-1 md:mr-64 relative overflow-y-auto">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-30 bg-absolute-black border-b border-surface-variant flex flex-row-reverse justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4">
+<div class="text-headline-md font-headline-md font-black text-electric-lime">Stocker</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-electric-lime cursor-pointer hover:opacity-80">notifications</span>
+<span class="material-symbols-outlined text-electric-lime cursor-pointer hover:opacity-80">flag</span>
+</div>
+</header>
+<!-- Mock Feed Content -->
+<div class="max-w-2xl mx-auto px-margin-mobile py-8 space-y-6 opacity-40 blur-[2px]">
+<div class="border-y border-dark-grey py-6">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 bg-surface-container-highest"></div>
+<div>
+<div class="font-bold">أحمد علي</div>
+<div class="text-label-caps font-label-caps text-on-surface-variant">منذ ٢ ساعة</div>
+</div>
+</div>
+<p class="text-body-lg font-body-lg mb-4">توقعات قوية لصعود سهم البنك التجاري الدولي خلال تداولات الأسبوع القادم.</p>
+<div class="aspect-video bg-dark-grey"></div>
+</div>
+<div class="border-y border-dark-grey py-6">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 bg-surface-container-highest"></div>
+<div>
+<div class="font-bold">سارة ممدوح</div>
+<div class="text-label-caps font-label-caps text-on-surface-variant">منذ ٤ ساعات</div>
+</div>
+</div>
+<p class="text-body-lg font-body-lg mb-4">قمت للتو بزيادة حصتي في قطاع العقارات. السوق المصري مليء بالفرص.</p>
+<div class="aspect-video bg-dark-grey"></div>
+</div>
+</div>
+<!-- OVERLAY: Gifting (The Focus of the task) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-absolute-black/80 backdrop-blur-sm p-4">
+<div class="w-full max-w-lg bg-dark-grey border border-surface-variant relative shadow-2xl">
+<!-- Close Button -->
+<button class="absolute top-4 left-4 text-on-surface-variant hover:text-pure-white transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="p-8">
+<!-- Header -->
+<div class="flex items-center gap-4 mb-10">
+<div class="bg-electric-lime p-3">
+<span class="material-symbols-outlined text-absolute-black" style="font-variation-settings: 'FILL' 1;">card_giftcard</span>
+</div>
+<div>
+<h2 class="text-headline-md font-headline-md text-pure-white leading-tight">إهداء سهم للمجتمع</h2>
+<p class="text-label-caps font-label-caps text-electric-lime">STK GIFTING PROTOCOL V1.0</p>
+</div>
+</div>
+<!-- Input Section -->
+<div class="space-y-8">
+<div class="relative">
+<label class="text-label-caps font-label-caps text-on-surface-variant mb-2 block">مبلغ الإهداء (جنيه مصري)</label>
+<input class="w-full bg-transparent border-b-2 border-pure-white focus:border-electric-lime outline-none py-4 text-display-xl font-display-xl-mobile md:text-display-xl md:font-display-xl text-pure-white placeholder:text-surface-variant text-right transition-colors" placeholder="0.00" type="text"/>
+<span class="absolute bottom-4 left-0 font-headline-md text-surface-variant">EGP</span>
+</div>
+<!-- Recipient Selector -->
+<div>
+<label class="text-label-caps font-label-caps text-on-surface-variant mb-4 block">اختر المستقبل</label>
+<div class="grid grid-cols-4 gap-2">
+<!-- Recipient 1 -->
+<button class="flex flex-col items-center gap-2 p-3 border border-electric-lime bg-surface-container-low group">
+<img alt="Profile" class="w-12 h-12 filter grayscale contrast-125 border border-electric-lime" data-alt="A high-contrast professional headshot of a middle-eastern woman in a dark business suit against a plain grey background, following a techno-organic and minimalist visual style with deep shadows and sharp focus to match a high-end fintech UI aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYSHUmWYDih9HtMXJsOsg-8yl_qDqjQWSv_fES4mDf5aAG5hr9Um6tu-4OT29fMeAkibob2TUXIYqKOZ0DSfpDlfTza2km6vbLcAZEhI7GAmwcG5AIxtbXbViIa14tOLdlviAgoLagRC4FgF6rgUXpt0HeqYJyxt37t1LvM7hsw6Mj74f9-K8ri0OPf0t_yiW3BPYc0gsRPg5-cyyhc3JECTlr9KcY4hCY3E8LYN83VarvgJPLkhUj4pu9UIgLMHsiilebQd0cNuY"/>
+<span class="text-label-caps font-label-caps text-electric-lime">مريم</span>
+</button>
+<!-- Recipient 2 -->
+<button class="flex flex-col items-center gap-2 p-3 border border-dark-grey hover:border-pure-white transition-all group">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center border border-transparent group-hover:border-pure-white">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+</div>
+<span class="text-label-caps font-label-caps text-on-surface-variant group-hover:text-pure-white">زياد</span>
+</button>
+<!-- Recipient 3 -->
+<button class="flex flex-col items-center gap-2 p-3 border border-dark-grey hover:border-pure-white transition-all group">
+<div class="w-12 h-12 bg-surface-container-highest flex items-center justify-center border border-transparent group-hover:border-pure-white">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+</div>
+<span class="text-label-caps font-label-caps text-on-surface-variant group-hover:text-pure-white">ليلى</span>
+</button>
+<!-- Search/Add -->
+<button class="flex flex-col items-center gap-2 p-3 border border-dark-grey border-dashed hover:border-electric-lime transition-all group">
+<div class="w-12 h-12 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-electric-lime">person_add</span>
+</div>
+<span class="text-label-caps font-label-caps text-on-surface-variant group-hover:text-electric-lime">المزيد</span>
+</button>
+</div>
+</div>
+<!-- CTA Button -->
+<button class="w-full bg-electric-lime text-absolute-black py-6 font-headline-md text-headline-md flex items-center justify-center gap-4 scale-100 hover:scale-[0.98] active:scale-95 transition-all">
+<span>تأكيد الهدية</span>
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+<!-- Subtle Decorative Element -->
+<div class="h-1 bg-gradient-to-l from-electric-lime to-transparent w-full"></div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex flex-row-reverse justify-around items-center py-2 bg-absolute-black border-t border-surface-variant">
+<a class="flex flex-col items-center justify-center text-on-surface-variant scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-label-caps font-label-caps">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">analytics</span>
+<span class="text-label-caps font-label-caps">بيانات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-electric-lime font-bold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-label-caps font-label-caps">مجتمع Stocker</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-label-caps font-label-caps">المحفظة</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-label-caps font-label-caps">حسابي</span>
+</a>
+</nav>
+</body></html>
