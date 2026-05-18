@@ -364,4 +364,87 @@
 
 
 
+<div id="postModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-absolute-black/80 backdrop-blur-sm">
+<!-- Create Post Modal Container -->
+<div class="bg-dark-grey w-full max-w-2xl border border-surface-variant zero-radius flex flex-col shadow-2xl">
+<!-- Modal Header -->
+<div class="flex flex-row-reverse justify-between items-center p-6 border-b border-surface-variant">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-electric-lime">add_circle</span>
+<h2 class="font-headline-md text-headline-md text-pure-white">إنشاء منشور جديد</h2>
+</div>
+<button class="text-on-surface-variant hover:text-electric-lime transition-colors" onclick="document.getElementById('postModal').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Content -->
+<div class="p-6 space-y-6">
+<!-- User Context -->
+<div class="flex items-center gap-4">
+<img alt="User Profile" class="w-12 h-12 rounded-full border border-surface-variant" data-alt="A professional Middle Eastern businesswoman with a kind expression, wearing a navy blue corporate suit and a patterned silk scarf. She has dark hair styled neatly. The lighting is soft and studio-quality against a clean, neutral grey background, embodying high-end corporate reliability and modern Egyptian fintech professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZajBHfJiM6vWfwAbwRyUWoKYlP4ep1A7fIDHeKZiNEjZxMUQgdkNGgS92I7fwCWCcdU_JGjihXVOMHeTtaRztaltjiPU9N8LuEs7hy3c2TzdZ9o3jToJfRZ4Yokahosop_3g8RomIVPBsAdyuAJppeIEVCozX3D698C5eE4CkpxdJmUb_OosxrsCvQ7nkt4x-Okoh1VBTLjE0I6mzyVoIHK16mGOGVvNYXeiCyweUJ5RHmzYtSHmvqLTtv-cyrUany7xf1fR2bsg"/>
+<div>
+<p class="font-body-lg text-body-lg text-pure-white leading-none">مريم العمري</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-1">@Mariam_Invests</p>
+</div>
+</div>
+<!-- Analysis Text Area -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-electric-lime block">تحليل السوق</label>
+<textarea class="w-full h-32 bg-surface-container-lowest border-b-2 border-pure-white focus:border-electric-lime focus:ring-0 text-pure-white font-body-md text-body-md placeholder:text-on-surface-variant transition-colors p-4 resize-none" placeholder="ما هو تحليلك لاتجاهات السوق اليوم؟..."></textarea>
+</div>
+<!-- Stock & Sentiment Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Stock Selector -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant block">اختيار السهم</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest border-b-2 border-pure-white focus:border-electric-lime text-pure-white font-data-mono text-data-mono p-3 appearance-none zero-radius">
+<option>EGTS.CA (المصرية للمنتجعات)</option>
+<option>COMI.CA (البنك التجاري الدولي)</option>
+<option>EAST.CA (الشرقية للدخان)</option>
+<option>FWRY.CA (فوري)</option>
+</select>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Sentiment Toggles -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant block">توقعك للاتجاه</label>
+<div class="flex gap-2">
+<button class="flex-1 py-3 border border-electric-lime bg-electric-lime text-absolute-black font-bold flex items-center justify-center gap-2 transition-transform active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">trending_up</span>
+<span class="font-label-caps">BULLISH</span>
+</button>
+<button class="flex-1 py-3 border border-surface-variant text-on-surface-variant font-bold flex items-center justify-center gap-2 hover:border-error-red hover:text-error-red transition-all">
+<span class="material-symbols-outlined">trending_down</span>
+<span class="font-label-caps">BEARISH</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Image Upload / Drag and Drop -->
+<div class="border-2 border-dashed border-surface-variant p-8 flex flex-col items-center justify-center gap-3 bg-surface-container-low hover:border-electric-lime group transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-electric-lime">add_photo_alternate</span>
+<div class="text-center">
+<p class="font-body-md text-body-md text-pure-white">اسحب المخططات البيانية هنا</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">PNG, JPG حتى 5 ميجابايت</p>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-6 bg-surface-container-lowest flex flex-row-reverse items-center justify-between border-t border-surface-variant">
+<div class="flex items-center gap-4 text-on-surface-variant">
+<button class="hover:text-electric-lime transition-colors"><span class="material-symbols-outlined">attach_file</span></button>
+<button class="hover:text-electric-lime transition-colors"><span class="material-symbols-outlined">bar_chart</span></button>
+<button class="hover:text-electric-lime transition-colors"><span class="material-symbols-outlined">alternate_email</span></button>
+</div>
+<div class="flex gap-4">
+<button class="px-8 py-3 bg-electric-lime text-absolute-black font-headline-md text-body-md font-bold active:opacity-80 transition-all" onclick="document.getElementById('postModal').classList.add('hidden'); alert('تم نشر تحليل السوق بنجاح في مجتمع Stocker!');">
+                        نشر في المجتمع
+                    </button>
+</div>
+</div>
+</div>
+</div>
+
 </body></html>

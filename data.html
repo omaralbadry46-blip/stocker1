@@ -244,7 +244,7 @@
 <div class="lg:col-span-2 bg-absolute-black border border-dark-grey">
 <div class="p-6 border-b border-dark-grey flex justify-between items-center">
 <h2 class="font-headline-md text-headline-md text-white">أداء القطاعات</h2>
-<button class="font-label-caps text-label-caps text-electric-lime flex items-center gap-2">
+<button class="font-label-caps text-label-caps text-electric-lime flex items-center gap-2" onclick="document.getElementById('giftModal').classList.remove('hidden')">
 <span>تصدير البيانات</span>
 <span class="material-symbols-outlined text-base">download</span>
 </button>
@@ -429,4 +429,61 @@
         <span class="text-[10px] font-label-caps mt-1">المحفظة</span>
     </a>
 </nav>
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-margin-mobile" id="giftModal">
+<div class="absolute inset-0 bg-absolute-black opacity-90" onclick="document.getElementById('giftModal').classList.add('hidden')"></div>
+<!-- Step 1: Enter Value (Simplified here as the main card container) -->
+<div class="relative w-full max-w-md bg-dark-grey border border-surface-variant p-8 shadow-2xl" id="giftCardStep">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline-md text-headline-md text-electric-lime">إهداء أسهم EGTS</h3>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="close" onclick="document.getElementById('giftModal').classList.add('hidden')">close</span>
+</div>
+<!-- Digital Gift Card Visual -->
+<div class="w-full aspect-[1.6/1] bg-electric-lime p-6 mb-8 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+<svg class="w-full h-full" viewbox="0 0 100 100"><rect fill="none" height="100" stroke="black" stroke-width="2" width="100"></rect></svg>
+</div>
+<div class="h-full flex flex-col justify-between relative z-10">
+<div>
+<div class="font-headline-md text-absolute-black font-black mb-1">Stocker Card</div>
+<div class="font-label-caps text-absolute-black opacity-70">GIFT INVESTMENT</div>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<div class="font-display-xl-mobile text-display-xl-mobile text-absolute-black leading-none">500</div>
+<div class="font-label-caps text-absolute-black">جنيه مصري</div>
+</div>
+<div class="text-right">
+<div class="font-label-caps text-absolute-black font-bold">EGTS STOCK</div>
+<div class="font-label-caps text-absolute-black opacity-50">REDEEMABLE CODE</div>
+</div>
+</div>
+</div>
+<!-- Mock "Hologram" -->
+<div class="absolute top-4 left-4 w-12 h-12 border-2 border-absolute-black opacity-20 rotate-45"></div>
+</div>
+<div class="space-y-6">
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-2 block">قيمة الهدية (ج.م)</label>
+<input class="w-full bg-transparent border-b-2 border-pure-white text-headline-md font-data-mono text-pure-white focus:border-electric-lime outline-none py-2 px-0 transition-colors" type="text" value="500"/>
+</div>
+<div class="bg-surface-container p-4 border-r-4 border-electric-lime">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">رمز الاسترداد</div>
+<div class="flex justify-between items-center">
+<span class="font-data-mono text-headline-md text-pure-white tracking-widest">STK-EGTS-992X</span>
+<span class="material-symbols-outlined text-electric-lime cursor-pointer" data-icon="content_copy">content_copy</span>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<button class="w-full bg-electric-lime text-absolute-black font-headline-md py-4 hover:opacity-90">
+                        تأكيد الشراء والإرسال
+                    </button>
+<button class="w-full border border-pure-white text-pure-white font-label-caps py-3 flex items-center justify-center gap-2 hover:bg-pure-white hover:text-absolute-black transition-all">
+<span>نسخ رابط الهدية</span>
+<span class="material-symbols-outlined" data-icon="link">link</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+
 </body></html>

@@ -186,11 +186,11 @@
 <p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mt-4">اكتشف واستثمر في محافظ تدار من قبل نخبة من المستثمرين في البورصة المصرية. شفافية كاملة وأداء موثق.</p>
 </div>
 <div class="flex gap-4">
-<button class="bg-dark-grey text-pure-white px-6 py-3 border border-surface-variant flex items-center gap-2 hover:bg-surface-variant transition-all">
+<button class="bg-dark-grey text-pure-white px-6 py-3 border border-surface-variant flex items-center gap-2 hover:bg-surface-variant transition-all" onclick="document.getElementById('filterModal').classList.remove('hidden')">
 <span class="material-symbols-outlined">tune</span>
 <span class="">تصفية</span>
 </button>
-<button class="bg-electric-lime text-absolute-black px-8 py-3 font-bold hover:opacity-80 transition-all">
+<button class="bg-electric-lime text-absolute-black px-8 py-3 font-bold hover:opacity-80 transition-all" onclick="document.getElementById('filterModal').classList.remove('hidden')">
                         استثمر الآن
                     </button>
 </div>
@@ -406,5 +406,78 @@
 <span class="material-symbols-outlined text-4xl">add</span>
 </button>
 
+
+<div id="filterModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-absolute-black/80 backdrop-blur-sm">
+<!-- Filter Modal -->
+<div class="bg-absolute-black w-full max-w-2xl border border-surface-variant flex flex-col shadow-2xl relative">
+<!-- Modal Header -->
+<div class="flex justify-between items-center p-6 border-b border-surface-variant">
+<h2 class="text-headline-md font-headline-md text-pure-white">تصفية الصناديق</h2>
+<button class="text-on-surface-variant hover:text-electric-lime transition-colors" onclick="document.getElementById('filterModal').classList.add('hidden')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Modal Content (Scrollable) -->
+<div class="p-6 overflow-y-auto flex flex-col gap-10 max-h-[716px]">
+<!-- Category Selection -->
+<section>
+<label class="text-label-caps font-label-caps text-on-surface-variant mb-4 block">الفئات الاستثمارية</label>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+<button class="bg-electric-lime text-absolute-black py-3 text-label-caps font-bold">متوافق مع الشريعة</button>
+<button class="border border-outline-variant text-on-surface-variant py-3 text-label-caps hover:border-pure-white transition-colors">ESG البيئي</button>
+<button class="border border-outline-variant text-on-surface-variant py-3 text-label-caps hover:border-pure-white transition-colors">تكنولوجيا</button>
+<button class="border border-outline-variant text-on-surface-variant py-3 text-label-caps hover:border-pure-white transition-colors">عقارات</button>
+</div>
+</section>
+<!-- Risk Level -->
+<section>
+<label class="text-label-caps font-label-caps text-on-surface-variant mb-4 block">مستوى المخاطرة</label>
+<div class="flex flex-row-reverse gap-3">
+<button class="flex-1 border border-outline-variant text-on-surface-variant py-3 text-label-caps hover:border-success-green transition-colors">منخفض</button>
+<button class="flex-1 border border-outline-variant text-on-surface-variant py-3 text-label-caps hover:border-primary-container transition-colors">متوسط</button>
+<button class="flex-1 bg-dark-grey border border-electric-lime text-electric-lime py-3 text-label-caps">عالي</button>
+<button class="flex-1 border border-outline-variant text-on-surface-variant py-3 text-label-caps hover:border-error-red transition-colors">شديد</button>
+</div>
+</section>
+<!-- Performance Sorting -->
+<section>
+<label class="text-label-caps font-label-caps text-on-surface-variant mb-4 block">الترتيب حسب الأداء</label>
+<div class="flex flex-col gap-2">
+<label class="flex items-center justify-between p-4 bg-dark-grey border border-electric-lime cursor-pointer group">
+<span class="text-body-md font-bold text-electric-lime">أفضل عائد (30 يوم)</span>
+<div class="w-4 h-4 bg-electric-lime"></div>
+</label>
+<label class="flex items-center justify-between p-4 border border-outline-variant hover:border-pure-white cursor-pointer group transition-colors">
+<span class="text-body-md text-on-surface-variant group-hover:text-pure-white">أعلى الأصول المدارة (AUM)</span>
+<div class="w-4 h-4 border border-outline-variant"></div>
+</label>
+<label class="flex items-center justify-between p-4 border border-outline-variant hover:border-pure-white cursor-pointer group transition-colors">
+<span class="text-body-md text-on-surface-variant group-hover:text-pure-white">أقل تذبذب</span>
+<div class="w-4 h-4 border border-outline-variant"></div>
+</label>
+</div>
+</section>
+<!-- Minimum Investment Range Slider -->
+<section>
+<div class="flex justify-between items-center mb-6">
+<label class="text-label-caps font-label-caps text-on-surface-variant">الحد الأدنى للاستثمار</label>
+<span class="font-data-mono text-electric-lime text-headline-md">5,000 ج.م</span>
+</div>
+<div class="relative w-full h-8">
+<input class="w-full" max="100000" min="500" step="500" type="range" value="5000"/>
+<div class="flex justify-between mt-4 text-label-caps font-label-caps text-on-surface-variant/50">
+<span>100,000 ج.م</span>
+<span>500 ج.م</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Modal Footer -->
+<div class="p-6 border-t border-surface-variant flex gap-4 bg-dark-grey">
+<button class="flex-1 bg-electric-lime text-absolute-black py-4 font-bold text-body-lg hover:opacity-90 transition-opacity" onclick="document.getElementById('filterModal').classList.add('hidden')">تطبيق الفلاتر</button>
+<button class="px-8 border border-outline-variant text-on-surface-variant py-4 font-bold text-body-lg hover:text-pure-white hover:border-pure-white transition-all">إعادة ضبط</button>
+</div>
+</div>
+</div>
 
 </body></html>
