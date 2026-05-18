@@ -1,0 +1,337 @@
+<!DOCTYPE html><html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&amp;family=Tajawal:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#131313",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-bright": "#393939",
+                        "on-primary": "#283500",
+                        "outline-variant": "#444936",
+                        "on-background": "#e2e2e2",
+                        "primary-fixed-dim": "#aed53c",
+                        "surface": "#131313",
+                        "inverse-on-surface": "#303030",
+                        "on-secondary-container": "#b4b5b5",
+                        "surface-tint": "#aed53c",
+                        "on-error": "#690005",
+                        "on-tertiary-container": "#656464",
+                        "surface-container": "#1f1f1f",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "error-container": "#93000a",
+                        "error-red": "#FF3B30",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "secondary": "#c6c6c7",
+                        "on-secondary-fixed-variant": "#454747",
+                        "primary-container": "#c9f156",
+                        "surface-container-highest": "#353535",
+                        "outline": "#8f937d",
+                        "tertiary-fixed": "#e5e2e1",
+                        "background": "#131313",
+                        "on-surface-variant": "#c5c9b1",
+                        "success-green": "#2ECC71",
+                        "absolute-black": "#000000",
+                        "secondary-container": "#454747",
+                        "inverse-surface": "#e2e2e2",
+                        "on-primary-container": "#556d00",
+                        "primary": "#ffffff",
+                        "tertiary": "#ffffff",
+                        "pure-white": "#FFFFFF",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-variant": "#353535",
+                        "on-tertiary": "#313030",
+                        "dark-grey": "#1A1A1A",
+                        "tertiary-container": "#e5e2e1",
+                        "on-primary-fixed": "#161f00",
+                        "inverse-primary": "#4f6600",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-primary-fixed-variant": "#3b4d00",
+                        "on-surface": "#e2e2e2",
+                        "on-secondary": "#2f3131",
+                        "primary-fixed": "#c9f156",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "electric-lime": "#D6FF62",
+                        "surface-container-low": "#1b1b1b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "4px",
+                        "section-gap": "48px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "display-xl-mobile": ["Cairo"],
+                        "display-xl": ["Cairo"],
+                        "headline-md": ["Cairo"],
+                        "body-lg": ["Tajawal"],
+                        "body-md": ["Tajawal"],
+                        "data-mono": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["Cairo"],
+                        "headline-lg": ["Cairo"],
+                        "label-caps": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "display-xl-mobile": ["48px", {"lineHeight": "52px", "fontWeight": "900"}],
+                        "display-xl": ["96px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+                        "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "800"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #000000;
+            color: #e2e2e2;
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000000;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1A1A1A;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1px;
+            background-color: #353535;
+        }
+        .bento-item {
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md bg-absolute-black">
+<!-- Top App Bar -->
+<!-- Unified TopAppBar -->
+<header class="bg-absolute-black border-b border-surface-variant docked full-width top-0 z-30 fixed left-0 right-0">
+    <div class="flex flex-row-reverse justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 md:pr-72">
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-on-surface-variant hover:text-electric-lime transition-colors cursor-pointer">notifications</span>
+            <span class="material-symbols-outlined text-on-surface-variant hover:text-electric-lime transition-colors cursor-pointer">flag</span>
+            <div class="md:hidden text-headline-md font-headline-md font-black text-electric-lime">Stocker</div>
+        </div>
+        <div class="flex-1 max-w-xl mx-4 hidden md:block">
+            <div class="relative flex items-center bg-dark-grey border-b-2 border-pure-white focus-within:border-electric-lime transition-all">
+                <span class="material-symbols-outlined absolute right-3 text-on-surface-variant">search</span>
+                <input class="w-full bg-transparent border-none focus:ring-0 text-pure-white py-2 pr-10 pl-4 text-body-md font-body-md placeholder-on-surface-variant" placeholder="ابحث هنا" type="text">
+            </div>
+        </div>
+        <div class="hidden md:block text-headline-md font-headline-md font-black text-electric-lime">Stocker</div>
+    </div>
+</header>
+<main class="pt-24 pb-20 md:pb-8 md:pr-72 px-margin-mobile md:px-margin-desktop min-h-screen">
+<!-- Stock Header Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-8 bg-absolute-black">
+<div class="flex justify-between items-start mb-6">
+<div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-pure-white mb-2">المصرية للمنتجعات السياحية</h1>
+<div class="flex items-center gap-3">
+<span class="font-label-caps text-label-caps text-electric-lime border border-electric-lime px-2 py-0.5">EGTS</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">القطاع: العقارات</span>
+</div>
+</div>
+<div class="text-left">
+<div class="font-display-xl-mobile text-display-xl-mobile text-electric-lime font-black">12.45</div>
+<div class="flex items-center justify-end gap-1 text-success-green font-data-mono text-data-mono">
+<span>+1.24 (10.5%)</span>
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+</div>
+</div>
+</div>
+<!-- Price Chart Placeholder -->
+<div class="w-full h-64 md:h-96 bg-dark-grey relative overflow-hidden flex items-end">
+<!-- Grid Lines -->
+<div class="absolute inset-0 grid grid-cols-6 grid-rows-4 opacity-10">
+<div class="border-l border-t border-pure-white"></div>
+<div class="border-l border-t border-pure-white"></div>
+<div class="border-l border-t border-pure-white"></div>
+<div class="border-l border-t border-pure-white"></div>
+<div class="border-l border-t border-pure-white"></div>
+<div class="border-l border-t border-pure-white"></div>
+</div>
+<!-- Aggressive Chart Visual -->
+<svg class="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1000 400">
+<path d="M0 350 L100 320 L200 340 L300 280 L400 290 L500 220 L600 250 L700 150 L800 180 L900 80 L1000 100 V400 H0 Z" fill="url(#limeGradient)" fill-opacity="0.2"></path>
+<path d="M0 350 L100 320 L200 340 L300 280 L400 290 L500 220 L600 250 L700 150 L800 180 L900 80 L1000 100" fill="none" stroke="#D6FF62" stroke-width="4"></path>
+<defs>
+<linearGradient id="limeGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#D6FF62"></stop>
+<stop offset="100%" stop-color="#000000"></stop>
+</linearGradient>
+</defs>
+</svg>
+<div class="absolute bottom-4 right-4 flex gap-4">
+<button class="font-label-caps text-label-caps text-electric-lime border border-electric-lime px-4 py-1">1 يوم</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-pure-white px-4 py-1">1 أسبوع</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-pure-white px-4 py-1">1 شهر</button>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-pure-white px-4 py-1">1 سنة</button>
+</div>
+</div>
+</section>
+<!-- Stats Bento Grid -->
+<section class="px-margin-mobile md:px-margin-desktop py-8">
+<h2 class="font-headline-md text-headline-md text-pure-white mb-6">إحصائيات الأداء</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-dark-grey p-6 flex flex-col justify-between border-r-2 border-electric-lime">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4">أعلى سعر (يوم)</span>
+<span class="font-data-mono text-headline-md text-pure-white">12.80</span>
+</div>
+<div class="bg-dark-grey p-6 flex flex-col justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4">أدنى سعر (يوم)</span>
+<span class="font-data-mono text-headline-md text-pure-white">11.95</span>
+</div>
+<div class="bg-dark-grey p-6 flex flex-col justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4">حجم التداول</span>
+<span class="font-data-mono text-headline-md text-pure-white">4.2M</span>
+</div>
+<div class="bg-dark-grey p-6 flex flex-col justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-4">القيمة السوقية</span>
+<span class="font-data-mono text-headline-md text-pure-white">1.2B</span>
+</div>
+</div>
+</section>
+<!-- About Stock Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-8">
+<h2 class="font-headline-md text-headline-md text-pure-white mb-4">عن الشركة</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed max-w-3xl">
+                المصرية للمنتجعات السياحية هي شركة رائدة في مجال تطوير المجتمعات السياحية المتكاملة في مصر. تركز الشركة على خلق وجهات عالمية المستوى مثل منطقة سهل حشيش، مما يوفر فرصاً استثمارية هائلة في قطاع السياحة والعقارات الفاخرة.
+            </p>
+</section>
+</main>
+<!-- Fixed Bottom Actions -->
+<div class="fixed bottom-0 left-0 w-full bg-absolute-black border-t border-surface-variant p-margin-mobile flex gap-4 z-40">
+<button class="flex-1 bg-pure-white text-absolute-black font-headline-md py-4 hover:bg-on-surface-variant transition-colors flex items-center justify-center gap-2">
+            شراء لنفسي
+        </button>
+<button class="flex-1 bg-electric-lime text-absolute-black font-headline-md py-4 hover:opacity-80 transition-opacity flex items-center justify-center gap-2" onclick="document.getElementById('giftModal').classList.remove('hidden')">
+<span>إرسال كهدية</span>
+<span class="material-symbols-outlined" data-icon="card_giftcard">card_giftcard</span>
+</button>
+</div>
+<!-- Gifting Overlay/Modal -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-margin-mobile" id="giftModal">
+<div class="absolute inset-0 bg-absolute-black opacity-90" onclick="document.getElementById('giftModal').classList.add('hidden')"></div>
+<!-- Step 1: Enter Value (Simplified here as the main card container) -->
+<div class="relative w-full max-w-md bg-dark-grey border border-surface-variant p-8 shadow-2xl" id="giftCardStep">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline-md text-headline-md text-electric-lime">إهداء أسهم EGTS</h3>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer" data-icon="close" onclick="document.getElementById('giftModal').classList.add('hidden')">close</span>
+</div>
+<!-- Digital Gift Card Visual -->
+<div class="w-full aspect-[1.6/1] bg-electric-lime p-6 mb-8 relative overflow-hidden group">
+<div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+<svg class="w-full h-full" viewBox="0 0 100 100"><rect fill="none" height="100" stroke="black" stroke-width="2" width="100"></rect></svg>
+</div>
+<div class="h-full flex flex-col justify-between relative z-10">
+<div>
+<div class="font-headline-md text-absolute-black font-black mb-1">Stocker Card</div>
+<div class="font-label-caps text-absolute-black opacity-70">GIFT INVESTMENT</div>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<div class="font-display-xl-mobile text-display-xl-mobile text-absolute-black leading-none">500</div>
+<div class="font-label-caps text-absolute-black">جنيه مصري</div>
+</div>
+<div class="text-right">
+<div class="font-label-caps text-absolute-black font-bold">EGTS STOCK</div>
+<div class="font-label-caps text-absolute-black opacity-50">REDEEMABLE CODE</div>
+</div>
+</div>
+</div>
+<!-- Mock "Hologram" -->
+<div class="absolute top-4 left-4 w-12 h-12 border-2 border-absolute-black opacity-20 rotate-45"></div>
+</div>
+<div class="space-y-6">
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant mb-2 block">قيمة الهدية (ج.م)</label>
+<input class="w-full bg-transparent border-b-2 border-pure-white text-headline-md font-data-mono text-pure-white focus:border-electric-lime outline-none py-2 px-0 transition-colors" type="text" value="500">
+</div>
+<div class="bg-surface-container p-4 border-r-4 border-electric-lime">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">رمز الاسترداد</div>
+<div class="flex justify-between items-center">
+<span class="font-data-mono text-headline-md text-pure-white tracking-widest">STK-EGTS-992X</span>
+<span class="material-symbols-outlined text-electric-lime cursor-pointer" data-icon="content_copy">content_copy</span>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<button class="w-full bg-electric-lime text-absolute-black font-headline-md py-4 hover:opacity-90">
+                        تأكيد الشراء والإرسال
+                    </button>
+<button class="w-full border border-pure-white text-pure-white font-label-caps py-3 flex items-center justify-center gap-2 hover:bg-pure-white hover:text-absolute-black transition-all">
+<span>نسخ رابط الهدية</span>
+<span class="material-symbols-outlined" data-icon="link">link</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Hidden Sidebar for responsiveness (Optional as per shared JSON) -->
+<!-- Unified SideNavBar -->
+<aside class="hidden md:flex flex-col fixed right-0 top-0 h-full z-40 py-8 bg-absolute-black border-l border-surface-variant w-64">
+    <div class="px-margin-mobile mb-10">
+        <h1 class="text-headline-md font-headline-md font-black text-electric-lime tracking-tighter">Stocker</h1>
+        <p class="text-body-md font-body-md text-on-surface-variant">Egyptian Exchange</p>
+    </div>
+    <nav class="flex flex-col gap-2">
+        <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-electric-lime transition-colors" href="index.html">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-body-md font-body-md">الرئيسية</span>
+        </a>
+        <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-electric-lime transition-colors" href="data.html">
+            <span class="material-symbols-outlined">analytics</span>
+            <span class="text-body-md font-body-md">بيانات السوق</span>
+        </a>
+        <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-electric-lime transition-colors" href="public_portfolios.html">
+            <span class="material-symbols-outlined">public</span>
+            <span class="text-body-md font-body-md">المحافظ العامة</span>
+        </a>
+        <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-electric-lime transition-colors" href="private_portfolios.html">
+            <span class="material-symbols-outlined">lock</span>
+            <span class="text-body-md font-body-md">المحافظ الخاصة</span>
+        </a>
+        <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-electric-lime transition-colors" href="community.html">
+            <span class="material-symbols-outlined">group</span>
+            <span class="text-body-md font-body-md">مجتمع Stocker</span>
+        </a>
+        <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-electric-lime transition-colors" href="wallet.html">
+            <span class="material-symbols-outlined">account_balance_wallet</span>
+            <span class="text-body-md font-body-md">المحفظة</span>
+        </a>
+        <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-electric-lime transition-colors" href="premium.html">
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-body-md font-body-md">حسابي</span>
+        </a>
+    </nav>
+</aside>
+</body></html>
