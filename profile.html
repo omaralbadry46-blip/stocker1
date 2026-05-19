@@ -1,0 +1,376 @@
+<!DOCTYPE html><html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;800;900&amp;family=Tajawal:wght@400;500;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-dim": "#131313",
+                "on-secondary-fixed": "#1a1c1c",
+                "surface-bright": "#393939",
+                "on-primary": "#283500",
+                "outline-variant": "#444936",
+                "on-background": "#e2e2e2",
+                "primary-fixed-dim": "#aed53c",
+                "surface": "#131313",
+                "inverse-on-surface": "#303030",
+                "on-secondary-container": "#b4b5b5",
+                "surface-tint": "#aed53c",
+                "on-error": "#690005",
+                "on-tertiary-container": "#656464",
+                "surface-container": "#1f1f1f",
+                "error": "#ffb4ab",
+                "on-error-container": "#ffdad6",
+                "error-container": "#93000a",
+                "error-red": "#FF3B30",
+                "secondary-fixed-dim": "#c6c6c7",
+                "on-tertiary-fixed-variant": "#474746",
+                "secondary": "#c6c6c7",
+                "on-secondary-fixed-variant": "#454747",
+                "primary-container": "#c9f156",
+                "surface-container-highest": "#353535",
+                "outline": "#8f937d",
+                "tertiary-fixed": "#e5e2e1",
+                "background": "#131313",
+                "on-surface-variant": "#c5c9b1",
+                "success-green": "#2ECC71",
+                "absolute-black": "#000000",
+                "secondary-container": "#454747",
+                "inverse-surface": "#e2e2e2",
+                "on-primary-container": "#556d00",
+                "primary": "#ffffff",
+                "tertiary": "#ffffff",
+                "pure-white": "#FFFFFF",
+                "tertiary-fixed-dim": "#c8c6c5",
+                "surface-variant": "#353535",
+                "on-tertiary": "#313030",
+                "dark-grey": "#1A1A1A",
+                "tertiary-container": "#e5e2e1",
+                "on-primary-fixed": "#161f00",
+                "inverse-primary": "#4f6600",
+                "surface-container-high": "#2a2a2a",
+                "secondary-fixed": "#e2e2e2",
+                "on-primary-fixed-variant": "#3b4d00",
+                "on-surface": "#e2e2e2",
+                "on-secondary": "#2f3131",
+                "primary-fixed": "#c9f156",
+                "surface-container-lowest": "#0e0e0e",
+                "on-tertiary-fixed": "#1c1b1b",
+                "electric-lime": "#D6FF62",
+                "surface-container-low": "#1b1b1b"
+        },
+        "borderRadius": {
+                "DEFAULT": "0rem",
+                "lg": "0rem",
+                "xl": "0rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "base": "4px",
+                "section-gap": "48px",
+                "margin-desktop": "64px",
+                "gutter": "24px",
+                "margin-mobile": "16px"
+        },
+        "fontFamily": {
+                "display-xl-mobile": ["Cairo"],
+                "display-xl": ["Cairo"],
+                "headline-md": ["Cairo"],
+                "body-lg": ["Tajawal"],
+                "body-md": ["Tajawal"],
+                "data-mono": ["JetBrains Mono"],
+                "headline-lg-mobile": ["Cairo"],
+                "headline-lg": ["Cairo"],
+                "label-caps": ["JetBrains Mono"]
+        },
+        "fontSize": {
+                "display-xl-mobile": ["48px", {"lineHeight": "52px", "fontWeight": "900"}],
+                "display-xl": ["96px", {"lineHeight": "100px", "letterSpacing": "-0.04em", "fontWeight": "900"}],
+                "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "500"}],
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "data-mono": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "800"}],
+                "headline-lg": ["48px", {"lineHeight": "56px", "fontWeight": "800"}],
+                "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600"}]
+        }
+    },
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: #000000;
+            color: #e2e2e2;
+            font-family: 'Tajawal', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-absolute-black">
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden md:flex flex-col fixed right-0 top-0 h-full z-40 py-8 bg-absolute-black border-l border-surface-variant w-64">
+    <div class="px-margin-mobile mb-10">
+        <h1 class="text-headline-md font-headline-md font-black text-electric-lime tracking-tighter">Stocker</h1>
+        <p class="text-body-md font-body-md text-on-surface-variant">Egyptian Exchange</p>
+    </div>
+    <nav class="flex flex-col gap-2">
+        <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-electric-lime transition-colors" href="index.html">
+            <span class="material-symbols-outlined">home</span>
+            <span class="text-body-md font-body-md">الرئيسية</span>
+        </a>
+        <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-electric-lime transition-colors" href="data.html">
+            <span class="material-symbols-outlined">analytics</span>
+            <span class="text-body-md font-body-md">بيانات السوق</span>
+        </a>
+        <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-electric-lime transition-colors" href="public_portfolios.html">
+            <span class="material-symbols-outlined">public</span>
+            <span class="text-body-md font-body-md">المحافظ العامة</span>
+        </a>
+        <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-electric-lime transition-colors" href="private_portfolios.html">
+            <span class="material-symbols-outlined">lock</span>
+            <span class="text-body-md font-body-md">المحافظ الخاصة</span>
+        </a>
+        <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-electric-lime transition-colors" href="community.html">
+            <span class="material-symbols-outlined">group</span>
+            <span class="text-body-md font-body-md">مجتمع Stocker</span>
+        </a>
+        <a class="flex items-center gap-4 text-on-surface-variant px-4 py-3 hover:bg-surface-variant hover:text-electric-lime transition-colors" href="wallet.html">
+            <span class="material-symbols-outlined">account_balance_wallet</span>
+            <span class="text-body-md font-body-md">المحفظة</span>
+        </a>
+        <a class="flex items-center gap-4 text-electric-lime border-r-4 border-electric-lime bg-surface-container-low px-4 py-3" href="profile.html">
+            <span class="material-symbols-outlined">person</span>
+            <span class="text-body-md font-body-md">حسابي</span>
+        </a>
+    </nav>
+</aside>
+
+<!-- TopAppBar -->
+<header class="bg-absolute-black border-b border-surface-variant docked full-width top-0 z-30 fixed left-0 right-0">
+    <div class="flex flex-row-reverse justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 md:pr-72">
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-on-surface-variant hover:text-electric-lime transition-colors cursor-pointer">notifications</span>
+            <span class="material-symbols-outlined text-on-surface-variant hover:text-electric-lime transition-colors cursor-pointer">flag</span>
+            <div class="md:hidden text-headline-md font-headline-md font-black text-electric-lime">Stocker</div>
+        </div>
+        <div class="flex-1 max-w-xl mx-4 hidden md:block">
+            <div class="relative flex items-center bg-dark-grey border-b-2 border-pure-white focus-within:border-electric-lime transition-all">
+                <span class="material-symbols-outlined absolute right-3 text-on-surface-variant">search</span>
+                <input class="w-full bg-transparent border-none focus:ring-0 text-pure-white py-2 pr-10 pl-4 text-body-md font-body-md placeholder-on-surface-variant" placeholder="ابحث هنا" type="text">
+            </div>
+        </div>
+        <div class="hidden md:block text-headline-md font-headline-md font-black text-electric-lime">Stocker</div>
+    </div>
+</header>
+
+<!-- Main Container -->
+<main class="pt-24 pb-20 md:pb-8 md:pr-72 px-margin-mobile md:px-margin-desktop min-h-screen">
+    <div class="max-w-4xl mx-auto space-y-6">
+        
+        <!-- Header Title -->
+        <div class="flex justify-between items-center">
+            <div>
+                <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-pure-white">إعدادات الحساب</h2>
+                <p class="text-on-surface-variant font-body-md">إدارة ملفك الشخصي واستثماراتك وتفضيلات الأمان</p>
+            </div>
+            <div class="bg-electric-lime text-absolute-black font-bold px-4 py-2 text-label-caps flex items-center gap-2 border border-electric-lime">
+                <span class="material-symbols-outlined text-sm">verified</span>
+                <span>حساب موثق</span>
+            </div>
+        </div>
+
+        <!-- Account Profile Summary Block (Asymmetric Brutalist Banner) -->
+        <div class="bg-dark-grey border border-surface-variant p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+            <div class="flex items-center gap-4">
+                <div class="w-20 h-20 bg-electric-lime text-absolute-black font-black text-headline-lg flex items-center justify-center border-2 border-pure-white">
+                    أ
+                </div>
+                <div>
+                    <h3 class="text-headline-md font-headline-md text-pure-white">أحمد محمد</h3>
+                    <p class="text-data-mono font-data-mono text-on-surface-variant">@ahmed_mohamed · عضو منذ يناير ٢٠٢٤</p>
+                    <div class="flex items-center gap-2 mt-2">
+                        <span class="bg-surface-container-high border border-electric-lime text-electric-lime px-2 py-0.5 text-label-caps">Stocker VIP</span>
+                        <span class="bg-success-green/20 text-success-green border border-success-green px-2 py-0.5 text-label-caps">مستثمر نشط</span>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-auto text-left md:text-right border-t md:border-t-0 md:border-r border-surface-variant pt-4 md:pt-0 md:pr-8 flex flex-row md:flex-col justify-between items-center md:items-end gap-2">
+                <div>
+                    <p class="text-label-caps font-label-caps text-on-surface-variant">إجمالي القيمة السوقية</p>
+                    <p class="text-headline-md font-headline-md font-black text-electric-lime">٢٤٩,٥٠٠.٤٠ ج.م</p>
+                </div>
+                <div class="flex items-center gap-1 text-success-green font-data-mono text-sm mt-1">
+                    <span class="material-symbols-outlined text-sm">trending_up</span>
+                    <span>+١٢.٤٪ (٣٠ يوم)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bento Grid for Account Insights -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            
+            <!-- Insight 1: Public Copiers -->
+            <div class="bg-dark-grey border border-surface-variant p-6 flex flex-col justify-between">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="material-symbols-outlined text-electric-lime text-4xl">group</span>
+                    <span class="text-label-caps font-label-caps text-on-surface-variant">النسخ الاجتماعي</span>
+                </div>
+                <div>
+                    <h4 class="text-headline-md font-headline-md text-pure-white mb-1">١٤٢ مستثمر</h4>
+                    <p class="text-body-md text-on-surface-variant">يقومون بنسخ تداولاتك الحالية في المحفظة العامة.</p>
+                </div>
+            </div>
+
+            <!-- Insight 2: Portfolios Created -->
+            <div class="bg-dark-grey border border-surface-variant p-6 flex flex-col justify-between">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="material-symbols-outlined text-on-surface-variant text-4xl">folder_shared</span>
+                    <span class="text-label-caps font-label-caps text-on-surface-variant">صناديقك الاستثمارية</span>
+                </div>
+                <div>
+                    <h4 class="text-headline-md font-headline-md text-pure-white mb-1">صندوقين (٢)</h4>
+                    <p class="text-body-md text-on-surface-variant">١ عام (تحت المراقبة) و ١ خاص بأصدقائك المقربين.</p>
+                </div>
+            </div>
+
+            <!-- Insight 3: Sharia Status Indicator -->
+            <div class="bg-dark-grey border border-surface-variant p-6 flex flex-col justify-between border-l-4 border-electric-lime">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="material-symbols-outlined text-electric-lime text-4xl">verified_user</span>
+                    <span class="text-label-caps font-label-caps text-on-surface-variant">التوافق الشرعي</span>
+                </div>
+                <div>
+                    <h4 class="text-headline-md font-headline-md text-pure-white mb-1">فلتر الشريعة نشط</h4>
+                    <p class="text-body-md text-on-surface-variant">يتم حظر وعزل أي سهم أو صندوق غير متوافق تلقائياً.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Custom Account Configuration Panels -->
+        <div class="space-y-4">
+            
+            <!-- Panel 1: Sharia Compliance Configuration -->
+            <div class="bg-dark-grey border border-surface-variant p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-electric-lime text-2xl">eco</span>
+                        <h4 class="text-body-lg font-bold text-pure-white">الفلترة والضوابط الشرعية</h4>
+                    </div>
+                    <!-- Styled Toggle Switch -->
+                    <label class="relative inline-flex items-center cursor-pointer">
+                        <input type="checkbox" checked class="sr-only peer" id="shariaFilterToggle" onchange="alert('تم تحديث إعدادات التصفية الشرعية بنجاح')">
+                        <div class="w-11 h-6 bg-surface-variant peer-focus:outline-none rounded-full peer peer-checked:after:-translate-x-full rtl:peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:right-[2px] after:bg-absolute-black after:border-surface-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-electric-lime"></div>
+                    </label>
+                </div>
+                <p class="text-body-md text-on-surface-variant leading-relaxed max-w-2xl mb-4">
+                    عند تفعيل هذا الخيار، سيقوم نظام Stocker تلقائياً بتطبيق معايير الرقابة الشرعية المعتمدة لدى الهيئة الشرعية للتطبيق على جميع المحافظ الاستثمارية، ولن يسمح بنسخ أو الاستثمار في الأسهم التي تفشل في معايير التطهير أو نسبة الديون.
+                </p>
+                <div class="border-t border-surface-variant/50 pt-4 flex justify-between items-center text-sm font-label-caps">
+                    <span class="text-on-surface-variant">آخر تحديث للقائمة المصنفة: اليوم ٠٢:٠٠ ص</span>
+                    <a href="#" class="text-electric-lime hover:underline flex items-center gap-1">
+                        <span>عرض قائمة المعايير بالكامل</span>
+                        <span class="material-symbols-outlined text-xs">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Panel 2: Copy Trading Parameters -->
+            <div class="bg-dark-grey border border-surface-variant p-6">
+                <div class="flex justify-between items-start mb-6">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-electric-lime text-2xl">settings_accessibility</span>
+                        <h4 class="text-body-lg font-bold text-pure-white">إعدادات وضوابط النسخ الاجتماعي</h4>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-label-caps text-on-surface-variant mb-2">أقصى نسبة للمحفظة لكل نسخ (%)</label>
+                            <input type="number" value="20" class="w-full bg-absolute-black border border-surface-variant text-pure-white p-3 font-data-mono focus:border-electric-lime outline-none" min="5" max="100">
+                            <span class="text-xs text-on-surface-variant mt-1 block">تحديد النسبة المئوية القصوى من إجمالي رأس مالك التي يمكن توجيهها لنسخ مستثمر واحد.</span>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-label-caps text-on-surface-variant mb-2">حد وقف الخسارة التلقائي (%)</label>
+                            <input type="number" value="15" class="w-full bg-absolute-black border border-surface-variant text-pure-white p-3 font-data-mono focus:border-electric-lime outline-none" min="1" max="50">
+                            <span class="text-xs text-on-surface-variant mt-1 block">إلغاء نسخ أي متداول فوراً وبشكل تلقائي في حال خسارة المحفظة المنسوخة النسبة المحددة.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button class="bg-electric-lime text-absolute-black font-bold px-8 py-3 hover:opacity-90 transition-opacity" onclick="alert('تم حفظ إعدادات معايير النسخ بنجاح!')">حفظ التغييرات</button>
+                </div>
+            </div>
+
+            <!-- Panel 3: Account & Security Information -->
+            <div class="bg-dark-grey border border-surface-variant p-6">
+                <h4 class="text-body-lg font-bold text-pure-white mb-6 border-b border-surface-variant pb-3 flex items-center gap-2">
+                    <span class="material-symbols-outlined text-electric-lime">lock_person</span>
+                    <span>الأمان والبيانات الشخصية</span>
+                </h4>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center py-3 border-b border-surface-variant/50">
+                        <div>
+                            <p class="text-body-md font-bold text-pure-white">البريد الإلكتروني</p>
+                            <p class="text-data-mono text-on-surface-variant">a.mohamed@eui.edu.eg</p>
+                        </div>
+                        <button class="text-electric-lime border border-electric-lime px-4 py-1 text-sm hover:bg-electric-lime hover:text-absolute-black transition-all">تعديل</button>
+                    </div>
+                    <div class="flex justify-between items-center py-3 border-b border-surface-variant/50">
+                        <div>
+                            <p class="text-body-md font-bold text-pure-white">رقم الهاتف المرتبط</p>
+                            <p class="text-data-mono text-on-surface-variant">+20 101 **** 992</p>
+                        </div>
+                        <button class="text-electric-lime border border-electric-lime px-4 py-1 text-sm hover:bg-electric-lime hover:text-absolute-black transition-all">تعديل</button>
+                    </div>
+                    <div class="flex justify-between items-center py-3">
+                        <div>
+                            <p class="text-body-md font-bold text-pure-white">المصادقة الثنائية (2FA)</p>
+                            <p class="text-on-surface-variant text-sm">معطلة حالياً. ينصح بتفعيلها لحماية رصيد محفظتك المالي.</p>
+                        </div>
+                        <button class="bg-electric-lime text-absolute-black font-bold px-4 py-2 text-sm hover:opacity-90" onclick="alert('سيرسل لك نظام التوثيق رسالة نصية قصيرة لتفعيل الـ 2FA')">تفعيل الآن</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</main>
+
+<!-- Unified BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex flex-row-reverse justify-around items-center py-2 bg-absolute-black border-t border-surface-variant">
+    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-electric-lime transition-all" href="index.html">
+        <span class="material-symbols-outlined">home</span>
+        <span class="text-[10px] font-label-caps mt-1">الرئيسية</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-electric-lime transition-all" href="data.html">
+        <span class="material-symbols-outlined">analytics</span>
+        <span class="text-[10px] font-label-caps mt-1">بيانات</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-electric-lime transition-all" href="public_portfolios.html">
+        <span class="material-symbols-outlined">public</span>
+        <span class="text-[10px] font-label-caps mt-1">عامة</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-electric-lime transition-all" href="private_portfolios.html">
+        <span class="material-symbols-outlined">lock</span>
+        <span class="text-[10px] font-label-caps mt-1">خاصة</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-electric-lime transition-all" href="wallet.html">
+        <span class="material-symbols-outlined">account_balance_wallet</span>
+        <span class="text-[10px] font-label-caps mt-1">المحفظة</span>
+    </a>
+</nav>
+
+</body></html>
