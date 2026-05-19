@@ -125,7 +125,8 @@
 <!-- Unified TopAppBar -->
 <!-- Unified TopAppBar -->
 <!-- Unified TopAppBar -->
-<header class="bg-absolute-black border-b border-surface-variant docked full-width top-0 z-30 fixed left-0 right-0">
+<!-- Unified TopAppBar -->
+<header class="bg-absolute-black border-b border-surface-variant docked full-width top-0 z-[60] fixed left-0 right-0">
     <div class="flex flex-row-reverse justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 md:pr-72">
         <div class="flex items-center gap-4">
             <div class="relative cursor-pointer flex items-center justify-center" onclick="document.getElementById('notificationBackdrop').classList.remove('hidden'); document.getElementById('notificationPanel').classList.remove('hidden');">
@@ -144,6 +145,82 @@
         <div class="hidden md:block text-headline-md font-headline-md font-black text-electric-lime">Stocker</div>
     </div>
 </header>
+
+<!-- Backdrop for Notification Overlay -->
+<div id="notificationBackdrop" class="hidden fixed inset-0 bg-absolute-black/60 backdrop-blur-sm z-[70]" onclick="document.getElementById('notificationBackdrop').classList.add('hidden'); document.getElementById('notificationPanel').classList.add('hidden');"></div>
+
+<!-- Notification Panel (Vertical Drawer Context) -->
+<div id="notificationPanel" class="hidden fixed top-20 left-4 md:left-margin-desktop w-[calc(100%-32px)] md:w-96 max-h-[819px] bg-dark-grey border border-surface-variant z-[80] flex flex-col shadow-2xl">
+    <!-- Header -->
+    <div class="p-4 border-b border-surface-variant flex justify-between items-center bg-surface-container-high">
+        <span class="text-label-caps font-label-caps text-electric-lime">الإشعارات الأخيرة</span>
+        <button class="text-on-surface-variant hover:text-pure-white" onclick="document.getElementById('notificationBackdrop').classList.add('hidden'); document.getElementById('notificationPanel').classList.add('hidden');">
+            <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+    </div>
+    <!-- List -->
+    <div class="overflow-y-auto flex-grow max-h-[400px]">
+        <!-- Notification 1: Price Hit -->
+        <div class="p-4 border-b border-surface-variant bg-surface-container-low hover:bg-surface-container transition-colors relative group">
+            <div class="absolute right-0 top-0 h-full w-1 bg-electric-lime"></div>
+            <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 bg-absolute-black border border-electric-lime flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-electric-lime">trending_up</span>
+                </div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start mb-1">
+                        <span class="font-headline-md text-body-md text-pure-white">تنبيه سعر: COMI</span>
+                        <span class="text-label-caps font-label-caps text-on-surface-variant text-[10px]">منذ دقيقتين</span>
+                    </div>
+                    <p class="text-body-md text-on-surface-variant leading-tight text-right">تجاوز سهم البنك التجاري الدولي حاجز الـ 85.50 ج.م كما هو محدد في تنبيهاتك.</p>
+                    <div class="mt-3 flex gap-2">
+                        <button class="bg-electric-lime text-absolute-black px-4 py-1 text-label-caps font-label-caps hover:opacity-90 transition-opacity" onclick="window.location.href='stock_details.html'">تداول الآن</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Notification 2: New Post from Analyst -->
+        <div class="p-4 border-b border-surface-variant hover:bg-surface-container-low transition-colors group">
+            <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 bg-dark-grey overflow-hidden border border-surface-variant shrink-0">
+                    <img alt="Profile" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxeSTNMecKJGN1tkXvFeLbWZvCYWg1DclamscYSzh6-ySGP9-YKBAA74HtVUmgtDxEdEaG0NTnMXU8oqLtcaKy43dbvlBjZ5fRUTTRNe76kCy_ZNSUNktfuLZkT08edC5Y7ygv8yTWK38u3S3YsXMkkWNMgBT0P9FVylx1oLhQFHlP3tXvxCNpiQZ61U8bg1IVfUN0Z0KROuvQv8Qd86j7-_G1fW7j_DRfkkN4eW4iPW1SSD46Y1nGXN7Dc1R0ixGF-YRrQkrlCns"/>
+                </div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start mb-1">
+                        <span class="font-headline-md text-body-md text-pure-white">مروة السيد</span>
+                        <span class="text-label-caps font-label-caps text-on-surface-variant text-[10px]">منذ ساعة</span>
+                    </div>
+                    <p class="text-body-md text-on-surface-variant leading-tight text-right">نشرت تحليلاً جديداً حول قطاع العقارات: "توقعات أداء طلعة مصطفى (TMG) في الربع القادم".</p>
+                    <div class="mt-3">
+                        <button class="border border-pure-white text-pure-white px-4 py-1 text-label-caps font-label-caps hover:bg-pure-white hover:text-absolute-black transition-all" onclick="window.location.href='community.html'">اقرأ المقال</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Notification 3: Gift Received -->
+        <div class="p-4 border-b border-surface-variant bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+            <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 bg-electric-lime flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-absolute-black">card_giftcard</span>
+                </div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start mb-1">
+                        <span class="font-headline-md text-body-md text-electric-lime">هدية استثمارية!</span>
+                        <span class="text-label-caps font-label-caps text-on-surface-variant text-[10px]">منذ 4 ساعات</span>
+                    </div>
+                    <p class="text-body-md text-on-surface-variant leading-tight text-right">لقد استلمت بطاقة هدايا بقيمة 500 ج.م من "سامح ك." لاستخدامها في شراء صناديق الاستثمار.</p>
+                    <div class="mt-3">
+                        <button class="bg-pure-white text-absolute-black px-4 py-1 text-label-caps font-label-caps hover:bg-electric-lime transition-all" onclick="window.location.href='data.html'">استرداد الهدية</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <a class="p-4 text-center bg-surface-container-high border-t border-surface-variant text-label-caps font-label-caps text-on-surface-variant hover:text-electric-lime transition-colors" href="#">
+        عرض جميع التنبيهات
+    </a>
+</div>
 
 <!-- Backdrop for Notification Overlay -->
 <div id="notificationBackdrop" class="hidden fixed inset-0 bg-absolute-black/60 backdrop-blur-sm z-40" onclick="document.getElementById('notificationBackdrop').classList.add('hidden'); document.getElementById('notificationPanel').classList.add('hidden');"></div>
@@ -226,6 +303,7 @@
 <!-- Unified SideNavBar -->
 <!-- Unified SideNavBar -->
 <!-- Unified SideNavBar -->
+<!-- Unified SideNavBar -->
 <aside class="hidden md:flex flex-col fixed right-0 top-0 h-full z-40 py-8 bg-absolute-black border-l border-surface-variant w-64">
     <div class="px-margin-mobile mb-10">
         <h1 class="text-headline-md font-headline-md font-black text-electric-lime tracking-tighter">Stocker</h1>
@@ -271,11 +349,12 @@
 <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-pure-white">مجتمع Stocker</h2>
 <p class="text-on-surface-variant font-body-md mt-1">نبض البورصة المصرية لحظة بلحظة</p>
 </div>
-<button class="bg-electric-lime text-absolute-black px-6 py-2 font-bold flex items-center gap-2 hover:opacity-90 transition-opacity">
+<button class="bg-electric-lime text-absolute-black px-6 py-2 font-bold flex items-center gap-2 hover:opacity-90 transition-opacity" onclick="document.getElementById('postModal').classList.remove('hidden')">
 <span class="material-symbols-outlined">add</span>
 <span class="">نشر تحليل</span>
 </button>
 </div>
+<div id="feedContainer" class="space-y-6">
 <!-- Type A: Standard Post with Chart -->
 <article class="bg-dark-grey border-t border-b border-surface-variant group relative">
 <div class="p-6">
@@ -389,6 +468,7 @@
 </div>
 </div>
 </article>
+</div>
 <!-- Leaderboard (Asymmetric Layout) -->
 <section class="mt-12">
 <div class="flex items-center gap-4 mb-6">
@@ -417,6 +497,7 @@
 </div>
 </main>
 <!-- BottomNavBar (Mobile Only) -->
+<!-- Unified BottomNavBar -->
 <!-- Unified BottomNavBar -->
 <!-- Unified BottomNavBar -->
 <!-- Unified BottomNavBar -->
@@ -478,7 +559,7 @@
 <!-- Analysis Text Area -->
 <div class="space-y-2">
 <label class="font-label-caps text-label-caps text-electric-lime block">تحليل السوق</label>
-<textarea class="w-full h-32 bg-surface-container-lowest border-b-2 border-pure-white focus:border-electric-lime focus:ring-0 text-pure-white font-body-md text-body-md placeholder:text-on-surface-variant transition-colors p-4 resize-none" placeholder="ما هو تحليلك لاتجاهات السوق اليوم؟..."></textarea>
+<textarea id="postContent" class="w-full h-32 bg-surface-container-lowest border-b-2 border-pure-white focus:border-electric-lime focus:ring-0 text-pure-white font-body-md text-body-md placeholder:text-on-surface-variant transition-colors p-4 resize-none" placeholder="ما هو تحليلك لاتجاهات السوق اليوم؟..."></textarea>
 </div>
 <!-- Stock & Sentiment Grid -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
@@ -486,11 +567,11 @@
 <div class="space-y-2">
 <label class="font-label-caps text-label-caps text-on-surface-variant block">اختيار السهم</label>
 <div class="relative">
-<select class="w-full bg-surface-container-lowest border-b-2 border-pure-white focus:border-electric-lime text-pure-white font-data-mono text-data-mono p-3 appearance-none zero-radius">
-<option>EGTS.CA (المصرية للمنتجعات)</option>
-<option>COMI.CA (البنك التجاري الدولي)</option>
-<option>EAST.CA (الشرقية للدخان)</option>
-<option>FWRY.CA (فوري)</option>
+<select id="postStock" class="w-full bg-surface-container-lowest border-b-2 border-pure-white focus:border-electric-lime text-pure-white font-data-mono text-data-mono p-3 appearance-none zero-radius">
+<option value="EGTS.CA">EGTS.CA (المصرية للمنتجعات)</option>
+<option value="COMI.CA">COMI.CA (البنك التجاري الدولي)</option>
+<option value="EAST.CA">EAST.CA (الشرقية للدخان)</option>
+<option value="FWRY.CA">FWRY.CA (فوري)</option>
 </select>
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">expand_more</span>
 </div>
@@ -499,11 +580,11 @@
 <div class="space-y-2">
 <label class="font-label-caps text-label-caps text-on-surface-variant block">توقعك للاتجاه</label>
 <div class="flex gap-2">
-<button class="flex-1 py-3 border border-electric-lime bg-electric-lime text-absolute-black font-bold flex items-center justify-center gap-2 transition-transform active:scale-95">
+<button id="bullishBtn" class="flex-1 py-3 border border-electric-lime bg-electric-lime text-absolute-black font-bold flex items-center justify-center gap-2 transition-transform active:scale-95" onclick="selectSentiment('BULLISH')">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">trending_up</span>
 <span class="font-label-caps">BULLISH</span>
 </button>
-<button class="flex-1 py-3 border border-surface-variant text-on-surface-variant font-bold flex items-center justify-center gap-2 hover:border-error-red hover:text-error-red transition-all">
+<button id="bearishBtn" class="flex-1 py-3 border border-surface-variant text-on-surface-variant font-bold flex items-center justify-center gap-2 hover:border-error-red hover:text-error-red transition-all" onclick="selectSentiment('BEARISH')">
 <span class="material-symbols-outlined">trending_down</span>
 <span class="font-label-caps">BEARISH</span>
 </button>
@@ -527,12 +608,132 @@
 <button class="hover:text-electric-lime transition-colors"><span class="material-symbols-outlined">alternate_email</span></button>
 </div>
 <div class="flex gap-4">
-<button class="px-8 py-3 bg-electric-lime text-absolute-black font-headline-md text-body-md font-bold active:opacity-80 transition-all" onclick="document.getElementById('postModal').classList.add('hidden'); alert('تم نشر تحليل السوق بنجاح في مجتمع Stocker!');">
+<button class="px-8 py-3 bg-electric-lime text-absolute-black font-headline-md text-body-md font-bold active:opacity-80 transition-all" onclick="submitNewPost()">
                         نشر في المجتمع
                     </button>
 </div>
 </div>
 </div>
 </div>
+
+<!-- Toast Container -->
+<div id="toast" class="hidden fixed bottom-24 right-6 md:right-margin-desktop bg-dark-grey border border-electric-lime text-pure-white px-6 py-4 z-[100] flex items-center gap-3 shadow-2xl transition-all duration-300 transform translate-y-10 opacity-0">
+    <span class="material-symbols-outlined text-electric-lime">check_circle</span>
+    <span class="font-body-md" id="toastMessage">تم نشر تحليلك بنجاح في مجتمع Stocker!</span>
+</div>
+
+<script>
+let activeSentiment = 'BULLISH';
+
+function selectSentiment(sentiment) {
+    activeSentiment = sentiment;
+    const bullishBtn = document.getElementById('bullishBtn');
+    const bearishBtn = document.getElementById('bearishBtn');
+    
+    if (sentiment === 'BULLISH') {
+        bullishBtn.className = "flex-1 py-3 border border-electric-lime bg-electric-lime text-absolute-black font-bold flex items-center justify-center gap-2 transition-transform active:scale-95";
+        bearishBtn.className = "flex-1 py-3 border border-surface-variant text-on-surface-variant font-bold flex items-center justify-center gap-2 hover:border-error-red hover:text-error-red transition-all";
+    } else {
+        bullishBtn.className = "flex-1 py-3 border border-surface-variant text-on-surface-variant font-bold flex items-center justify-center gap-2 hover:border-electric-lime hover:text-electric-lime transition-all";
+        bearishBtn.className = "flex-1 py-3 border border-error-red bg-error-red text-pure-white font-bold flex items-center justify-center gap-2 transition-transform active:scale-95";
+    }
+}
+
+function showToast(message) {
+    const toast = document.getElementById('toast');
+    const toastMessage = document.getElementById('toastMessage');
+    toastMessage.textContent = message;
+    
+    toast.classList.remove('hidden');
+    // Force reflow
+    toast.offsetHeight;
+    toast.classList.remove('translate-y-10', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    
+    setTimeout(() => {
+        toast.classList.remove('translate-y-0', 'opacity-100');
+        toast.classList.add('translate-y-10', 'opacity-0');
+        setTimeout(() => {
+            toast.classList.add('hidden');
+        }, 300);
+    }, 3000);
+}
+
+function submitNewPost() {
+    const content = document.getElementById('postContent').value.trim();
+    const stockVal = document.getElementById('postStock').value;
+    
+    if (!content) {
+        alert('برجاء كتابة تحليل السوق أولاً!');
+        return;
+    }
+    
+    // Create new post article
+    const feedContainer = document.getElementById('feedContainer');
+    const newPost = document.createElement('article');
+    newPost.className = "bg-dark-grey border-t border-b border-surface-variant group relative";
+    
+    const sentimentBadge = activeSentiment === 'BULLISH' 
+        ? `<div class="absolute top-4 right-4 bg-success-green/20 text-success-green border border-success-green px-4 py-1 font-label-caps">BULLISH / شرائي</div>`
+        : `<div class="absolute top-4 right-4 bg-error-red/20 text-error-red border border-error-red px-4 py-1 font-label-caps">BEARISH / بيعي</div>`;
+        
+    const buySellButton = activeSentiment === 'BULLISH'
+        ? `<button class="bg-electric-lime text-absolute-black font-bold px-8 py-2 hover:opacity-90">شراء السهم</button>`
+        : `<button class="bg-error-red text-pure-white font-bold px-8 py-2 hover:opacity-90">بيع السهم</button>`;
+        
+    newPost.innerHTML = \`
+    <div class="p-6">
+        <div class="flex items-center gap-4 mb-4">
+            <img alt="User Profile" class="w-12 h-12 rounded-full border border-surface-variant object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZajBHfJiM6vWfwAbwRyUWoKYlP4ep1A7fIDHeKZiNEjZxMUQgdkNGgS92I7fwCWCcdU_JGjihXVOMHeTtaRztaltjiPU9N8LuEs7hy3c2TzdZ9o3jToJfRZ4Yokahosop_3g8RomIVPBsAdyuAJppeIEVCozX3D698C5eE4CkpxdJmUb_OosxrsCvQ7nkt4x-Okoh1VBTLjE0I6mzyVoIHK16mGOGVvNYXeiCyweUJ5RHmzYtSHmvqLTtv-cyrUany7xf1fR2bsg">
+            <div>
+                <p class="font-headline-md text-pure-white text-[18px]">مريم العمري</p>
+                <p class="text-on-surface-variant font-label-caps text-[10px]">@Mariam_Invests</p>
+            </div>
+            <div class="mr-auto">
+                <span class="bg-dark-grey border border-electric-lime text-electric-lime px-3 py-1 font-label-caps flex items-center gap-1">
+                    <span class="w-2 h-2 bg-electric-lime inline-block"></span>
+                    \${stockVal}
+                </span>
+            </div>
+        </div>
+        <p class="font-body-lg text-on-surface mb-6">\${content}</p>
+        <div class="relative w-full aspect-video mb-6 border border-surface-variant overflow-hidden">
+            <img alt="Market Chart" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuChck979LWB9rh6JS3PRiR2Hgg8DTQFt0EGiAZh_KisKEvMxgm_Zm4eKXBEZcudZEHrD01i2RJVzGs00JjWD71SybzoHcCC5elJmQjoZxWVABKFseQm4aWEg5vkz5wcRmAZ3ms37SqsbJn76az9erIA9xL8tDL4-ow8e0z5Z-YkVrdT1PbKPD22ZeKYpXTrZIfy9sEfY3aqpNk5pHqmBOnrYorOu8lKtNFGyn9JDqG43YLTz-2mO0js2Cel5k0Iwntfwxb-U6fBjX8">
+            \${sentimentBadge}
+        </div>
+        <div class="flex items-center justify-between border-t border-surface-variant pt-4">
+            <div class="flex gap-6">
+                <button class="flex items-center gap-2 text-on-surface-variant hover:text-electric-lime">
+                    <span class="material-symbols-outlined">thumb_up</span>
+                    <span class="font-data-mono">0</span>
+                </button>
+                <button class="flex items-center gap-2 text-on-surface-variant hover:text-electric-lime">
+                    <span class="material-symbols-outlined">chat_bubble</span>
+                    <span class="font-data-mono">0</span>
+                </button>
+            </div>
+            <div class="flex gap-2">
+                <button class="bg-dark-grey text-electric-lime border border-electric-lime px-4 py-2 hover:bg-electric-lime hover:text-absolute-black transition-all">
+                    <span class="material-symbols-outlined">card_giftcard</span>
+                </button>
+                \${buySellButton}
+            </div>
+        </div>
+    </div>\`;
+    
+    // Prepend to feedContainer
+    feedContainer.insertBefore(newPost, feedContainer.firstChild);
+    
+    // Reset modal
+    document.getElementById('postContent').value = '';
+    selectSentiment('BULLISH');
+    
+    // Hide Modal
+    document.getElementById('postModal').classList.add('hidden');
+    
+    // Show premium toast notification
+    showToast('تم نشر تحليلك بنجاح في مجتمع Stocker!');
+}
+</script>
 
 </body></html>

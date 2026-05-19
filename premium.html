@@ -123,7 +123,8 @@
 <!-- Unified TopAppBar -->
 <!-- Unified TopAppBar -->
 <!-- Unified TopAppBar -->
-<header class="bg-absolute-black border-b border-surface-variant docked full-width top-0 z-30 fixed left-0 right-0">
+<!-- Unified TopAppBar -->
+<header class="bg-absolute-black border-b border-surface-variant docked full-width top-0 z-[60] fixed left-0 right-0">
     <div class="flex flex-row-reverse justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 md:pr-72">
         <div class="flex items-center gap-4">
             <div class="relative cursor-pointer flex items-center justify-center" onclick="document.getElementById('notificationBackdrop').classList.remove('hidden'); document.getElementById('notificationPanel').classList.remove('hidden');">
@@ -142,6 +143,82 @@
         <div class="hidden md:block text-headline-md font-headline-md font-black text-electric-lime">Stocker</div>
     </div>
 </header>
+
+<!-- Backdrop for Notification Overlay -->
+<div id="notificationBackdrop" class="hidden fixed inset-0 bg-absolute-black/60 backdrop-blur-sm z-[70]" onclick="document.getElementById('notificationBackdrop').classList.add('hidden'); document.getElementById('notificationPanel').classList.add('hidden');"></div>
+
+<!-- Notification Panel (Vertical Drawer Context) -->
+<div id="notificationPanel" class="hidden fixed top-20 left-4 md:left-margin-desktop w-[calc(100%-32px)] md:w-96 max-h-[819px] bg-dark-grey border border-surface-variant z-[80] flex flex-col shadow-2xl">
+    <!-- Header -->
+    <div class="p-4 border-b border-surface-variant flex justify-between items-center bg-surface-container-high">
+        <span class="text-label-caps font-label-caps text-electric-lime">الإشعارات الأخيرة</span>
+        <button class="text-on-surface-variant hover:text-pure-white" onclick="document.getElementById('notificationBackdrop').classList.add('hidden'); document.getElementById('notificationPanel').classList.add('hidden');">
+            <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+    </div>
+    <!-- List -->
+    <div class="overflow-y-auto flex-grow max-h-[400px]">
+        <!-- Notification 1: Price Hit -->
+        <div class="p-4 border-b border-surface-variant bg-surface-container-low hover:bg-surface-container transition-colors relative group">
+            <div class="absolute right-0 top-0 h-full w-1 bg-electric-lime"></div>
+            <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 bg-absolute-black border border-electric-lime flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-electric-lime">trending_up</span>
+                </div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start mb-1">
+                        <span class="font-headline-md text-body-md text-pure-white">تنبيه سعر: COMI</span>
+                        <span class="text-label-caps font-label-caps text-on-surface-variant text-[10px]">منذ دقيقتين</span>
+                    </div>
+                    <p class="text-body-md text-on-surface-variant leading-tight text-right">تجاوز سهم البنك التجاري الدولي حاجز الـ 85.50 ج.م كما هو محدد في تنبيهاتك.</p>
+                    <div class="mt-3 flex gap-2">
+                        <button class="bg-electric-lime text-absolute-black px-4 py-1 text-label-caps font-label-caps hover:opacity-90 transition-opacity" onclick="window.location.href='stock_details.html'">تداول الآن</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Notification 2: New Post from Analyst -->
+        <div class="p-4 border-b border-surface-variant hover:bg-surface-container-low transition-colors group">
+            <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 bg-dark-grey overflow-hidden border border-surface-variant shrink-0">
+                    <img alt="Profile" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxeSTNMecKJGN1tkXvFeLbWZvCYWg1DclamscYSzh6-ySGP9-YKBAA74HtVUmgtDxEdEaG0NTnMXU8oqLtcaKy43dbvlBjZ5fRUTTRNe76kCy_ZNSUNktfuLZkT08edC5Y7ygv8yTWK38u3S3YsXMkkWNMgBT0P9FVylx1oLhQFHlP3tXvxCNpiQZ61U8bg1IVfUN0Z0KROuvQv8Qd86j7-_G1fW7j_DRfkkN4eW4iPW1SSD46Y1nGXN7Dc1R0ixGF-YRrQkrlCns"/>
+                </div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start mb-1">
+                        <span class="font-headline-md text-body-md text-pure-white">مروة السيد</span>
+                        <span class="text-label-caps font-label-caps text-on-surface-variant text-[10px]">منذ ساعة</span>
+                    </div>
+                    <p class="text-body-md text-on-surface-variant leading-tight text-right">نشرت تحليلاً جديداً حول قطاع العقارات: "توقعات أداء طلعة مصطفى (TMG) في الربع القادم".</p>
+                    <div class="mt-3">
+                        <button class="border border-pure-white text-pure-white px-4 py-1 text-label-caps font-label-caps hover:bg-pure-white hover:text-absolute-black transition-all" onclick="window.location.href='community.html'">اقرأ المقال</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Notification 3: Gift Received -->
+        <div class="p-4 border-b border-surface-variant bg-surface-container-lowest hover:bg-surface-container-low transition-colors group">
+            <div class="flex gap-4 items-start">
+                <div class="w-10 h-10 bg-electric-lime flex items-center justify-center shrink-0">
+                    <span class="material-symbols-outlined text-absolute-black">card_giftcard</span>
+                </div>
+                <div class="flex-grow">
+                    <div class="flex justify-between items-start mb-1">
+                        <span class="font-headline-md text-body-md text-electric-lime">هدية استثمارية!</span>
+                        <span class="text-label-caps font-label-caps text-on-surface-variant text-[10px]">منذ 4 ساعات</span>
+                    </div>
+                    <p class="text-body-md text-on-surface-variant leading-tight text-right">لقد استلمت بطاقة هدايا بقيمة 500 ج.م من "سامح ك." لاستخدامها في شراء صناديق الاستثمار.</p>
+                    <div class="mt-3">
+                        <button class="bg-pure-white text-absolute-black px-4 py-1 text-label-caps font-label-caps hover:bg-electric-lime transition-all" onclick="window.location.href='data.html'">استرداد الهدية</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <a class="p-4 text-center bg-surface-container-high border-t border-surface-variant text-label-caps font-label-caps text-on-surface-variant hover:text-electric-lime transition-colors" href="#">
+        عرض جميع التنبيهات
+    </a>
+</div>
 
 <!-- Backdrop for Notification Overlay -->
 <div id="notificationBackdrop" class="hidden fixed inset-0 bg-absolute-black/60 backdrop-blur-sm z-40" onclick="document.getElementById('notificationBackdrop').classList.add('hidden'); document.getElementById('notificationPanel').classList.add('hidden');"></div>
@@ -219,6 +296,7 @@
     </a>
 </div>
 <!-- Side Navigation (Desktop Only) -->
+<!-- Unified SideNavBar -->
 <!-- Unified SideNavBar -->
 <!-- Unified SideNavBar -->
 <!-- Unified SideNavBar -->
@@ -360,6 +438,7 @@
 </section>
 </main>
 <!-- Bottom Navigation Bar (Mobile Only) -->
+<!-- Unified BottomNavBar -->
 <!-- Unified BottomNavBar -->
 <!-- Unified BottomNavBar -->
 <!-- Unified BottomNavBar -->
